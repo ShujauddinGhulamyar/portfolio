@@ -46,10 +46,15 @@ const HomeContent = ({ data }) => {
                   className="uppercase flex items-center gap-2"
                   aria-label="Télécharger le CV"
                 >
-                  <Button variant="outline" size="lg">
-                    <span>Download CV</span>
-                    <FiDownload className="text-xl" />
-                  </Button>
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: "spring" }}
+                  >
+                    <Button variant="outline" size="lg">
+                      <span>Download CV</span>
+                      <FiDownload className="text-xl" />
+                    </Button>
+                  </motion.div>
                 </a>
               </div>
               <div className="flex gap-6">
