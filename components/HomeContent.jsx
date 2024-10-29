@@ -46,15 +46,10 @@ const HomeContent = ({ data }) => {
                   className="uppercase flex items-center gap-2"
                   aria-label="Télécharger le CV"
                 >
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ type: "spring" }}
-                  >
-                    <Button variant="outline" size="lg">
-                      <span>Download CV</span>
-                      <FiDownload className="text-xl" />
-                    </Button>
-                  </motion.div>
+                  <Button variant="outline" size="lg">
+                    <span>Download CV</span>
+                    <FiDownload className="text-xl" />
+                  </Button>
                 </a>
               </div>
               <div className="flex gap-6">
@@ -66,13 +61,7 @@ const HomeContent = ({ data }) => {
             </div>
           </div>
           <div className="order-1 xl:order-none mb-8 xl:mb-0">
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ delay: 0.6, duration: 0.4 }}
-            >
-              <Photo />
-            </motion.div>
+            <Photo />
           </div>
         </div>
       </div>
