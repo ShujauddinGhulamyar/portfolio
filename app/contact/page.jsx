@@ -74,9 +74,9 @@ const Contact = () => {
               onSubmit={handleSubmit(onSubmit)}
               className="flex flex-col gap-4 p-8 bg-transparent rounded-xl"
             >
-              <h3 className="text-3xl text-accent">Let's connect</h3>
+              <h3 className="text-3xl text-accent">Let&apos;s connect</h3>
               <p className="text-white/60 text-sm">
-                I'm excited to hear from you! Whether you have questions,
+                I&apos;m excited to hear from you! Whether you have questions,
                 feedback, or just want to chat, feel free to reach out.
               </p>
               {/* Inputs */}
