@@ -21,19 +21,19 @@ const AboutPage = () => {
               About Me
             </h1>
             <p className="mb-6 text-justify">
-              I'm a passionate Full Stack Developer living in the greater
+              I&apos;m a passionate Full Stack Developer living in the greater
               Montreal area. I graduated in 2023 with a DEC in Computer Science
               from Cégep Édouard-Montpetit. My interest in technology began at a
-              young age; I’ve always been fascinated by how things work and have
-              dreamed of creating beautiful websites since I was a kid. This
-              passion led me to pursue a career in software development, where I
-              enjoy turning ideas into engaging, user-friendly applications. In
-              my free time, I also like to keep learning, especially on Udemy,
-              which helps me stay up-to-date with the latest trends. I also
-              enjoy gaming, which provides a great escape and inspires my
-              creativity.
+              young age; I&apos;ve always been fascinated by how things work and
+              have dreamed of creating beautiful websites since I was a kid.
+              This passion led me to pursue a career in software development,
+              where I enjoy turning ideas into engaging, user-friendly
+              applications. In my free time, I also like to keep learning,
+              especially on Udemy, which helps me stay up-to-date with the
+              latest trends. I also enjoy gaming, which provides a great escape
+              and inspires my creativity.
             </p>
-            <p>Let’s connect and create something amazing together!</p>
+            <p>Here are the technologies I work with:</p>
           </motion.div>
           <motion.div
             className="flex-1 flex justify-center items-start mt-10"
