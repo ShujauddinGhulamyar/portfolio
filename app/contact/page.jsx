@@ -15,12 +15,20 @@ const schema = yup.object().shape({
   name: yup
     .string()
     .required("Name is required")
-    .max(50, "Name must be at most 50 characters"),
+    .max(50, "Name must be at most 50 characters")
+    .matches(
+      /^[A-Za-z\s]+$/,
+      "Name must not contain numbers or special characters"
+    ),
   email: yup
     .string()
     .email("Invalid email")
     .required("Email is required")
-    .max(254, "Email must be at most 254 characters"),
+    .max(254, "Email must be at most 254 characters")
+    .matches(
+      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+      "Email must be a valid format"
+    ),
   message: yup
     .string()
     .required("Message is required")
@@ -106,7 +114,7 @@ const Contact = () => {
                   id="name"
                   type="text"
                   placeholder="Name"
-                  maxLength={50} // Limite le nom à 50 caractères
+                  maxLength={50}
                   {...register("name")}
                 />
                 {errors.name && (
@@ -123,7 +131,7 @@ const Contact = () => {
                   id="email"
                   type="email"
                   placeholder="Email"
-                  maxLength={254} // Limite l'email à 254 caractères
+                  maxLength={254}
                   {...register("email")}
                 />
                 {errors.email && (
@@ -141,7 +149,7 @@ const Contact = () => {
                 id="message"
                 className="h-[150px]"
                 placeholder="Type your message here (e.g., question, feedback)"
-                maxLength={500} // Limite le message à 500 caractères
+                maxLength={500}
                 {...register("message")}
               />
               {errors.message && (
