@@ -47,8 +47,10 @@ const Contact = () => {
 
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false); // État pour gérer la soumission
 
   const onSubmit = async (data) => {
+    setIsSubmitting(true); // Démarre la soumission
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -72,6 +74,8 @@ const Contact = () => {
       console.error("Error:", error);
       setErrorMessage("An unexpected error occurred. Please try again later.");
       setSubmitSuccess(false);
+    } finally {
+      setIsSubmitting(false); // Arrête la soumission
     }
   };
 
@@ -167,9 +171,10 @@ const Contact = () => {
                   variant="outline"
                   size="lg"
                   className="flex items-center justify-center py-3 gap-2"
+                  disabled={isSubmitting} // Désactiver le bouton si en soumission
                 >
                   <FaPaperPlane className="text-xl" />
-                  <span>Send message</span>
+                  <span>{isSubmitting ? "Sending..." : "Send message"}</span>
                 </Button>
               </motion.div>
             </motion.div>
