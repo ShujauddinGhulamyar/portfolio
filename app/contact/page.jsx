@@ -84,7 +84,7 @@ const Contact = () => {
           transition={{ delay: 0.4, duration: 0.4 }}
         >
           <h3 className="text-4xl font-semibold text-accent mb-4">
-            Let&apos;s connect
+            Get in touch
           </h3>
           <p className="text-white">
             I&apos;m excited to hear from you! Whether you have questions,

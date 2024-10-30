@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
 
 const links = [
   {
@@ -35,11 +34,9 @@ const Nav = () => {
       {links.map((link, index) => {
         const isActive = link.path === pathname;
         return (
-          <motion.div
-            key={index}
-            whileHover={{ x: [0, -2, 2, -2, 0] }} // Réduction des valeurs de translation
-            transition={{ duration: 0.3 }} // Durée de l'animation
-          >
+          <div key={index}>
+            {" "}
+            {/* Retire le motion.div ici */}
             <Link
               href={link.path}
               className={`capitalize font-medium ${
@@ -50,7 +47,7 @@ const Nav = () => {
             >
               {link.name}
             </Link>
-          </motion.div>
+          </div>
         );
       })}
     </nav>
