@@ -3,8 +3,8 @@ import nodemailer from "nodemailer";
 export async function POST(req) {
   try {
     // Parse the incoming JSON data from the request
-    const { name, email, optionalInfo, message } = await req.json();
-    console.log("Received data:", { name, email, optionalInfo, message });
+    const { name, email, message } = await req.json(); // Suppression de optionalInfo
+    console.log("Received data:", { name, email, message });
 
     // Log email credentials for debugging
     console.log("EMAIL_USER:", process.env.EMAIL_USER);
@@ -31,7 +31,6 @@ export async function POST(req) {
       text: `
         Name: ${name}
         Email: ${email}
-        Optional Info: ${optionalInfo || "N/A"}
         Message: ${message}
       `, // Email body
     };
