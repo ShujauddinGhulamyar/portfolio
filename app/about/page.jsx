@@ -12,8 +12,9 @@ const AboutPage = () => {
     >
       <div className="container mx-auto h-full flex flex-col justify-between">
         <div className="flex flex-col xl:flex-row justify-center items-center">
+          {/* Div pour le texte */}
           <motion.div
-            className="flex-1 text-center xl:text-left mb-8 xl:mb-0"
+            className="flex-1 text-center xl:text-left mb-8 xl:mb-0 xl:order-1"
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.4 }}
@@ -21,6 +22,18 @@ const AboutPage = () => {
             <h1 className="text-4xl font-semibold mb-4 text-accent">
               About Me
             </h1>
+
+            {/* Div pour la photo, juste après le titre */}
+            <motion.div
+              className="flex justify-center mb-4 xl:mb-6 xl:hidden" // Visible seulement sur petits écrans
+              initial={{ x: 50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.6, duration: 0.4 }}
+            >
+              <Photo />
+            </motion.div>
+
+            {/* Paragraphes de texte */}
             <p className="mb-6 text-justify">
               Hello! My name is Shuja, and I&apos;m originally from Afghanistan.
               I&apos;ve lived in Canada since the age of 7 and am currently
@@ -42,15 +55,17 @@ const AboutPage = () => {
               entertains me but also sparks my imagination.
             </p>
           </motion.div>
+
+          {/* Div pour la photo, visible sur écrans larges uniquement */}
           <motion.div
-            className="flex-1 flex justify-center items-start"
+            className="flex-1 flex justify-center items-start mb-8 xl:mb-0 xl:order-2 xl:flex" // Visible sur grands écrans
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.4 }}
           >
-            <div className="order-1 xl:order-none mb-8 xl:mb-0 ml-16 -mt-8">
+            <div className="hidden xl:block">
               {" "}
-              {/* Adjusted -mt-16 to -mt-8 */}
+              {/* Cette div est cachée sur petits écrans */}
               <Photo />
             </div>
           </motion.div>
