@@ -12,7 +12,7 @@ module.exports = {
     fontFamily: { primary: "var(--font-jetBrainsMono)" },
     extend: {
       colors: {
-        primary: "#031D2E",
+        primary: "#05141D",
         accent: {
           DEFAULT: "#00ff99",
           hover: "#00e187",
