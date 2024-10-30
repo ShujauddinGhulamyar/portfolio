@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const socials = [
-  { icon: <FaGithub />, path: "https://github.com/tonprofil" },
+  { icon: <FaGithub />, path: "https://github.com/ShujauddinGhulamyar" },
   { icon: <FaLinkedinIn />, path: "https://linkedin.com/in/shuja-ghulamyar" },
 ];
 
