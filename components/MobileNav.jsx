@@ -45,7 +45,7 @@ const MobileNav = () => {
       </SheetTrigger>
       <SheetContent className="flex flex-col justify-center h-full">
         {/* logo */}
-        <div className="mb-10 text-center text-2xl text-accent">
+        <div className="mb-10 text-center text-2xl hover:text-accent">
           <Link href="/" onClick={handleLinkClick}>
             <h1 className="text-4xl font semibold">S.G</h1>
           </Link>

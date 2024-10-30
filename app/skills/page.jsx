@@ -61,7 +61,7 @@ const skills = () => {
                 develop dynamic web applications. I employ frameworks like
                 <span className="text-accent"> React</span> and
                 <span className="text-accent"> Angular</span> to enhance user
-                interaction and streamline navigation. Additionally, I utilize
+                interaction and streamline navigation. Additionally, I use
                 <span className="text-accent"> Bootstrap</span> for quick and
                 efficient styling, ensuring that my projects maintain a modern
                 aesthetic.
@@ -101,7 +101,7 @@ const skills = () => {
                 applications. I also work with
                 <span className="text-accent"> SQL Server</span> to design and
                 optimize databases, ensuring data integrity and efficient query
-                performance. Additionally, I utilize
+                performance. Also, I use
                 <span className="text-accent"> Firebase</span> for real-time
                 database capabilities and user authentication.
                 <span className="text-accent"> Git</span> is also an essential
