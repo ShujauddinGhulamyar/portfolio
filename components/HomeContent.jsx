@@ -41,7 +41,7 @@ const HomeContent = ({ data }) => {
             <div className="flex flex-col xl:flex-row items-center gap-8">
               <div className="flex items-center">
                 <a
-                  href="/assets/shuja_ghulamyar_cv.pdf" // Chemin vers ton CV
+                  href="/assets/Shuja_Ghulamyar_CV.pdf"
                   download
                   className="uppercase flex items-center gap-2"
                   aria-label="Télécharger le CV"
