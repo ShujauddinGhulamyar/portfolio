@@ -11,7 +11,7 @@ async function fetchData() {
 }
 
 const Home = async () => {
-  const data = await fetchData(); // Appelle la fonction de récupération des données
+  const data = await fetchData();
 
   return <HomeContent data={data} />;
 };
