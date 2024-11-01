@@ -23,9 +23,9 @@ const AboutPage = () => {
               About Me
             </h1>
 
-            {/* Div pour la photo, juste après le titre */}
+            {/* Photo visible sur petits écrans, juste après le titre */}
             <motion.div
-              className="flex justify-center mb-4 xl:mb-6 xl:hidden" // Visible seulement sur petits écrans
+              className="flex justify-center mb-4 xl:hidden"
               initial={{ x: 50, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.4 }}
@@ -56,18 +56,14 @@ const AboutPage = () => {
             </p>
           </motion.div>
 
-          {/* Div pour la photo, visible sur écrans larges uniquement */}
+          {/* Photo visible sur grands écrans uniquement */}
           <motion.div
-            className="flex-1 flex justify-center items-start mb-8 xl:mb-0 xl:order-2 xl:flex" // Visible sur grands écrans
+            className="flex-1 hidden xl:flex justify-center items-start mb-8 xl:mb-0 xl:order-2"
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.4 }}
           >
-            <div className="hidden xl:block">
-              {" "}
-              {/* Cette div est cachée sur petits écrans */}
-              <Photo />
-            </div>
+            <Photo />
           </motion.div>
         </div>
       </div>
