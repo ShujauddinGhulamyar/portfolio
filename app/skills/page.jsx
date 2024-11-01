@@ -1,7 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
-const skills = () => {
+const Skills = () => {
   const frontEndLogos = [
     { src: "/assets/html.svg", alt: "HTML", name: "HTML" },
     { src: "/assets/css.svg", alt: "CSS", name: "CSS" },
@@ -40,7 +41,6 @@ const skills = () => {
     >
       <div className="container mx-auto h-full flex flex-col justify-between">
         <div className="flex flex-col xl:flex-row justify-between items-start">
-          {/* Div for the text */}
           <motion.div
             className="flex-1 text-center xl:text-left mb-8 xl:mb-0 xl:order-1"
             initial={{ x: -50, opacity: 0 }}
@@ -49,7 +49,6 @@ const skills = () => {
           >
             <h1 className="text-4xl font-semibold mb-4 text-accent">Skills</h1>
 
-            {/* Description of skills */}
             <div className="mb-6 text-justify">
               <h2 className="text-xl font-semibold mb-2">Front-End</h2>
               <p className="mb-4">
@@ -70,17 +69,18 @@ const skills = () => {
                 sacrificing quality.
               </p>
 
-              {/* Front-End Icons */}
               <div className="flex flex-wrap gap-4 justify-center mb-8">
                 {frontEndLogos.map((logo) => (
                   <div
                     key={logo.alt}
                     className="flex flex-col items-center justify-center w-24 h-32 border border-white/10 rounded-lg p-4 shadow-lg transition-transform duration-200 transform hover:scale-105"
                   >
-                    <img
+                    <Image
                       src={logo.src}
                       alt={logo.alt}
-                      className="w-16 h-16 mb-2"
+                      width={64} // Set appropriate width
+                      height={64} // Set appropriate height
+                      className="mb-2"
                     />
                     <span className="text-center text-sm">{logo.name}</span>
                   </div>
@@ -109,17 +109,18 @@ const skills = () => {
                 collaboration and maintaining a clear project history.
               </p>
 
-              {/* Back-End Icons */}
               <div className="flex flex-wrap gap-4 justify-center">
                 {backEndLogos.map((logo) => (
                   <div
                     key={logo.alt}
                     className="flex flex-col items-center justify-center w-24 h-32 border border-white/10 rounded-lg p-4 shadow-lg transition-transform duration-200 transform hover:scale-105"
                   >
-                    <img
+                    <Image
                       src={logo.src}
                       alt={logo.alt}
-                      className="w-16 h-16 mb-2"
+                      width={64} // Set appropriate width
+                      height={64} // Set appropriate height
+                      className="mb-2"
                     />
                     <span className="text-center text-sm">{logo.name}</span>
                   </div>
@@ -133,4 +134,4 @@ const skills = () => {
   );
 };
 
-export default skills;
+export default Skills;
