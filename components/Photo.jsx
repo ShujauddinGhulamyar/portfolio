@@ -7,12 +7,12 @@ const Photo = () => {
     <div className="flex items-center justify-center w-full h-full">
       <motion.div className="relative w-[150px] h-[150px] xl:w-[300px] xl:h-[300px] rounded-full overflow-hidden">
         <Image
-          src="/assets/photo.jpg"
+          src="/assets/photo.webp"
           priority
-          quality={100}
+          quality={75} // Réduire la qualité pour un meilleur chargement
           fill
           alt="Description of the image"
-          className="object-cover" // Utilise object-cover pour remplir le cercle
+          className="object-cover"
         />
       </motion.div>
     </div>
