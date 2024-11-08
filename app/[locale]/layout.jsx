@@ -1,19 +1,14 @@
-// app/layout.jsx
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
-
-// Importer la metadata
 import { metadata } from "../metadata";
 
-// components
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-// Pour charger la police JetBrains_Mono
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
@@ -24,8 +19,8 @@ export default async function Layout({ children, params }) {
   // Await the params object
   const { locale } = await params;
 
-  // Vérifier si la locale est valide (tu pourrais également vérifier cela dans un routing comme tu l'as fait précédemment)
-  if (!["en", "fr", "de"].includes(locale)) {
+  // Vérifier si la locale est valide
+  if (!["en", "fr"].includes(locale)) {
     notFound();
   }
 

@@ -11,7 +11,6 @@ import { FaPaperPlane } from "react-icons/fa";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 
-// Validation schema with Yup
 const schema = yup.object().shape({
   name: yup
     .string()

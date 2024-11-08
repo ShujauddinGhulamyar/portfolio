@@ -8,7 +8,7 @@ const Header = () => {
     <header className="py-8 xl:py-3 mb-8 text-white bg-[#051926]">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo - Lien vers la page d'accueil */}
-        <Link href="/home">
+        <Link href="/">
           <h1 className="text-4xl hover:text-accent font-semibold">S.G</h1>
         </Link>
         {/* Navigation desktop */}

@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 const links = [
   {
     name: "home",
-    path: "/home",
+    path: "/",
   },
   {
     name: "about",

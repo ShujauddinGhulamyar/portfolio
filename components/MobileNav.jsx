@@ -9,7 +9,7 @@ import { CiMenuFries } from "react-icons/ci";
 const links = [
   {
     key: "home",
-    path: "/home",
+    path: "/",
   },
   {
     key: "about",
@@ -47,12 +47,6 @@ const MobileNav = () => {
         <CiMenuFries className="text-[32px] text-accent" />
       </SheetTrigger>
       <SheetContent className="flex flex-col justify-center h-full">
-        {/* logo */}
-        <div className="mb-10 text-center text-2xl hover:text-accent">
-          <Link href="/home" onClick={handleLinkClick}>
-            <h1 className="text-4xl font-semibold">S.G</h1>
-          </Link>
-        </div>
         <nav className="flex flex-col justify-center items-center gap-10">
           {links.map((link, index) => {
             return (
