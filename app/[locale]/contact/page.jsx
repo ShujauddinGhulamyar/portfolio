@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { motion } from "framer-motion";
 import { FaPaperPlane } from "react-icons/fa";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 // Validation schema with Yup
 const schema = yup.object().shape({
@@ -36,6 +37,7 @@ const schema = yup.object().shape({
 });
 
 const Contact = () => {
+  const t = useTranslations("Contact"); // Utilisation de useTranslations pour la section Contact
   const {
     register,
     handleSubmit,
@@ -67,12 +69,12 @@ const Contact = () => {
       } else {
         const errorData = await response.json();
         console.error("Error sending message:", errorData.error);
-        setErrorMessage("Failed to send message. Please try again.");
+        setErrorMessage(t("error_message"));
         setSubmitSuccess(false);
       }
     } catch (error) {
       console.error("Error:", error);
-      setErrorMessage("An unexpected error occurred. Please try again later.");
+      setErrorMessage(t("unexpected_error"));
       setSubmitSuccess(false);
     } finally {
       setIsSubmitting(false); // Arrête la soumission
@@ -96,12 +98,9 @@ const Contact = () => {
           transition={{ delay: 0.4, duration: 0.4 }}
         >
           <h3 className="text-4xl font-semibold text-accent mb-4">
-            Get in touch
+            {t("title")}
           </h3>
-          <p className="text-white">
-            I&apos;m excited to hear from you! Whether you have questions,
-            feedback, or just want to chat, feel free to reach out.
-          </p>
+          <p className="text-white">{t("description")}</p>
         </motion.div>
 
         <motion.div className="flex flex-col xl:flex-row gap-6">
@@ -112,12 +111,12 @@ const Contact = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="flex flex-col">
                 <label htmlFor="name" className="sr-only">
-                  Name
+                  {t("name")}
                 </label>
                 <Input
                   id="name"
                   type="text"
-                  placeholder="Name"
+                  placeholder={t("name")}
                   maxLength={50}
                   {...register("name")}
                 />
@@ -129,12 +128,12 @@ const Contact = () => {
               </div>
               <div className="flex flex-col">
                 <label htmlFor="email" className="sr-only">
-                  Email
+                  {t("email")}
                 </label>
                 <Input
                   id="email"
                   type="email"
-                  placeholder="Email"
+                  placeholder={t("email")}
                   maxLength={254}
                   {...register("email")}
                 />
@@ -147,12 +146,12 @@ const Contact = () => {
             </div>
             <div className="flex flex-col">
               <label htmlFor="message" className="sr-only">
-                Message
+                {t("message")}
               </label>
               <Textarea
                 id="message"
                 className="h-[150px]"
-                placeholder="Type your message here (e.g., question, feedback)"
+                placeholder={t("message")}
                 maxLength={500}
                 {...register("message")}
               />
@@ -174,12 +173,12 @@ const Contact = () => {
                   disabled={isSubmitting} // Désactiver le bouton si en soumission
                 >
                   <FaPaperPlane className="text-xl" />
-                  <span>{isSubmitting ? "Sending..." : "Send message"}</span>
+                  <span>{isSubmitting ? t("sending") : t("send_message")}</span>
                 </Button>
               </motion.div>
             </motion.div>
             {submitSuccess && (
-              <p className="text-green-500 mt-2">Message sent successfully!</p>
+              <p className="text-green-500 mt-2">{t("message_sent")}</p>
             )}
             {errorMessage && (
               <p className="text-red-500 mt-2">{errorMessage}</p>

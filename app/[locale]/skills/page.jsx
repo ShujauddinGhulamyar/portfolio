@@ -1,8 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const Skills = () => {
+  const t = useTranslations("Skills"); // Utilisation des traductions pour la page Skills
+
   const frontEndLogos = [
     { src: "/assets/html.svg", alt: "HTML", name: "HTML" },
     { src: "/assets/css.svg", alt: "CSS", name: "CSS" },
@@ -47,27 +50,15 @@ const Skills = () => {
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.4 }}
           >
-            <h1 className="text-4xl font-semibold mb-4 text-accent">Skills</h1>
+            <h1 className="text-4xl font-semibold mb-4 text-accent">
+              {t("title")}
+            </h1>
 
             <div className="mb-6 text-justify">
-              <h2 className="text-xl font-semibold mb-2">Front-End</h2>
-              <p className="mb-4">
-                As a front-end developer, I specialize in crafting visually
-                appealing and responsive user interfaces. My proficiency in
-                <span className="text-accent"> HTML</span>,
-                <span className="text-accent"> CSS</span>, and
-                <span className="text-accent"> JavaScript</span> enables me to
-                develop dynamic web applications. I employ frameworks like
-                <span className="text-accent"> React</span> and
-                <span className="text-accent"> Angular</span> to enhance user
-                interaction and streamline navigation. Additionally, I use
-                <span className="text-accent"> Bootstrap</span> for quick and
-                efficient styling, ensuring that my projects maintain a modern
-                aesthetic.
-                <span className="text-accent"> Tailwind CSS</span> complements
-                my workflow by allowing for rapid design adjustments without
-                sacrificing quality.
-              </p>
+              <h2 className="text-xl font-semibold mb-2">
+                {t("frontEnd.title")}
+              </h2>
+              <p className="mb-4">{t("frontEnd.description")}</p>
 
               <div className="flex flex-wrap gap-4 justify-center mb-8">
                 {frontEndLogos.map((logo) => (
@@ -78,8 +69,8 @@ const Skills = () => {
                     <Image
                       src={logo.src}
                       alt={logo.alt}
-                      width={64} // Set appropriate width
-                      height={64} // Set appropriate height
+                      width={64}
+                      height={64}
                       className="mb-2"
                     />
                     <span className="text-center text-sm">{logo.name}</span>
@@ -87,27 +78,10 @@ const Skills = () => {
                 ))}
               </div>
 
-              <h2 className="text-xl font-semibold mb-2">Back-End</h2>
-              <p className="mb-4">
-                On the back-end, I leverage technologies such as
-                <span className="text-accent"> Node.js</span> and
-                <span className="text-accent"> ASP.NET Core</span> to build
-                robust servers and manage databases effectively.
-                <span className="text-accent"> Node.js</span> empowers me to
-                create scalable applications that can handle real-time data,
-                while
-                <span className="text-accent"> ASP.NET Core</span> provides a
-                solid foundation for developing high-performance web
-                applications. I also work with
-                <span className="text-accent"> SQL Server</span> to design and
-                optimize databases, ensuring data integrity and efficient query
-                performance. Also, I use
-                <span className="text-accent"> Firebase</span> for real-time
-                database capabilities and user authentication.
-                <span className="text-accent"> Git</span> is also an essential
-                tool in my workflow for version control, facilitating
-                collaboration and maintaining a clear project history.
-              </p>
+              <h2 className="text-xl font-semibold mb-2">
+                {t("backEnd.title")}
+              </h2>
+              <p className="mb-4">{t("backEnd.description")}</p>
 
               <div className="flex flex-wrap gap-4 justify-center">
                 {backEndLogos.map((logo) => (
@@ -118,8 +92,8 @@ const Skills = () => {
                     <Image
                       src={logo.src}
                       alt={logo.alt}
-                      width={64} // Set appropriate width
-                      height={64} // Set appropriate height
+                      width={64}
+                      height={64}
                       className="mb-2"
                     />
                     <span className="text-center text-sm">{logo.name}</span>

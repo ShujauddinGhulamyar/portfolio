@@ -1,0 +1,49 @@
+{
+  "Home": {
+    "hello": "Hello! I'm",
+    "name": "Shuja Ghulamyar",
+    "title": "A Full Stack Developer in Montreal",
+    "intro": "Welcome to my portfolio! I'm glad you're here! While I'm currently working on my projects, this space will soon showcase my creative journey and future endeavors. Stay tuned for updates!",
+    "download_cv": "Download CV"
+  },
+  "About": {
+    "title": "About Me",
+    "intro": "Hello! My name is Shuja, and I’m originally from Afghanistan. I’ve lived in Canada since the age of 7 and am currently based in the greater Montreal area.",
+    "journey": "My journey into technology began at a young age, fueled by a curiosity about how things work—whether it’s websites, video games, or innovative tech solutions. This curiosity led me to pursue a program in Computer Science at Cégep Édouard-Montpetit, where I graduated in 2023. Since then, I have been deepening my skills in modern web development on platforms like Udemy.",
+    "passion": "I’m passionate about continuous learning and enjoy exploring new trends and skills. I love collaborating with others, as working with people brings fresh perspectives and enhances creativity. In my free time, I enjoy gaming, which not only entertains me but also sparks my imagination."
+  },
+  "Skills": {
+    "title": "Skills",
+    "frontEnd": {
+      "title": "Front-End",
+      "description": "As a front-end developer, I specialize in crafting visually appealing and responsive user interfaces. My proficiency in HTML, CSS, and JavaScript enables me to develop dynamic web applications. I use frameworks like React and Angular to enhance user interaction and streamline navigation. Additionally, I use Bootstrap for quick and efficient styling, and Tailwind CSS for rapid design adjustments without sacrificing quality."
+    },
+    "backEnd": {
+      "title": "Back-End",
+      "description": "On the back-end, I leverage technologies such as Node.js and ASP.NET Core to build robust servers and manage databases effectively. Node.js empowers me to create scalable applications that can handle real-time data, while ASP.NET Core provides a solid foundation for developing high-performance web applications. I also work with SQL Server to design and optimize databases, ensuring data integrity and efficient query performance. Additionally, I use Firebase for real-time database capabilities and user authentication. Git is an essential tool in my workflow for version control, enabling collaboration and maintaining a clear project history."
+    }
+  },
+  "Projects": {
+    "title": "Projects",
+    "description": "This page is dedicated to showcasing my future personal projects. Stay tuned for exciting updates as I embark on new challenges and share my progress!"
+  },
+  "Contact": {
+    "title": "Get in Touch",
+    "description": "I’m excited to hear from you! Whether you have questions, feedback, or just want to chat, feel free to reach out.",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send_message": "Send message",
+    "sending": "Sending...",
+    "message_sent": "Message sent successfully!",
+    "error_message": "Failed to send message. Please try again.",
+    "unexpected_error": "An unexpected error occurred. Please try again later."
+  },
+  "Nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  }
+}

@@ -1,12 +1,13 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 const links = [
   {
     name: "home",
-    path: "/",
+    path: "/home",
   },
   {
     name: "about",
@@ -28,6 +29,7 @@ const links = [
 
 const Nav = () => {
   const pathname = usePathname();
+  const t = useTranslations("Nav"); // Utilisation des traductions pour la section 'Nav'
 
   return (
     <nav className="flex gap-8">
@@ -35,8 +37,6 @@ const Nav = () => {
         const isActive = link.path === pathname;
         return (
           <div key={index}>
-            {" "}
-            {/* Retire le motion.div ici */}
             <Link
               href={link.path}
               className={`capitalize font-medium ${
@@ -45,7 +45,8 @@ const Nav = () => {
                   : "hover:text-accent"
               } transition-all`}
             >
-              {link.name}
+              {t(link.name)}{" "}
+              {/* Remplacer le texte statique par la clé de traduction */}
             </Link>
           </div>
         );

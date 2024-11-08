@@ -2,28 +2,29 @@
 import { useState } from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { usePathname } from "next/navigation";
-import Link from "next/link";
+import { Link } from "@/i18n/routing"; // Import de ton Link personnalisé
+import { useTranslations } from "next-intl"; // Import de useTranslations pour la traduction
 import { CiMenuFries } from "react-icons/ci";
 
 const links = [
   {
-    name: "home",
-    path: "/",
+    key: "home",
+    path: "/home",
   },
   {
-    name: "about",
+    key: "about",
     path: "/about",
   },
   {
-    name: "skills",
+    key: "skills",
     path: "/skills",
   },
   {
-    name: "projects",
+    key: "projects",
     path: "/projects",
   },
   {
-    name: "contact",
+    key: "contact",
     path: "/contact",
   },
 ];
@@ -31,10 +32,12 @@ const links = [
 const MobileNav = () => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const t = useTranslations("Nav"); // Utilisation des traductions pour la section 'Nav'
 
   const handleLinkClick = () => {
     setIsOpen(false); // Ferme le menu
   };
+
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger
@@ -46,8 +49,8 @@ const MobileNav = () => {
       <SheetContent className="flex flex-col justify-center h-full">
         {/* logo */}
         <div className="mb-10 text-center text-2xl hover:text-accent">
-          <Link href="/" onClick={handleLinkClick}>
-            <h1 className="text-4xl font semibold">S.G</h1>
+          <Link href="/home" onClick={handleLinkClick}>
+            <h1 className="text-4xl font-semibold">S.G</h1>
           </Link>
         </div>
         <nav className="flex flex-col justify-center items-center gap-10">
@@ -62,7 +65,8 @@ const MobileNav = () => {
                   "text-accent border-b-2 border-accent"
                 } text-3xl capitalize hover:text-accent transition-all`}
               >
-                {link.name}
+                {t(link.key)}{" "}
+                {/* Utilisation des clés de traduction du fichier en.json */}
               </Link>
             );
           })}

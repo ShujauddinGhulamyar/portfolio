@@ -1,13 +1,12 @@
-// app/page.jsx
 "use client";
 import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
 import { motion } from "framer-motion";
 import Social from "@/components/Social";
+import { useTranslations } from "next-intl";
 
 const Home = () => {
-  const name = "Shuja Ghulamyar";
-  const title = "A Full Stack Developer in Montreal";
+  const t = useTranslations("Home"); // Utilisation des traductions pour la section 'Home'
 
   return (
     <motion.section
@@ -20,34 +19,29 @@ const Home = () => {
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pb-50">
           <div className="text-center xl:text-left xl:ml-40">
             <h1 className="h1">
-              <span className="text-[24px] xl:text-[32px]">{`Hello! I'm`}</span>
+              <span className="text-[24px] xl:text-[32px]">{t("hello")}</span>
             </h1>
             <h1 className="h1 mb-4">
-              <span className="text-accent">{name}</span>
+              <span className="text-accent">{t("name")}</span>
             </h1>
             <div className="mb-10">
-              <span className="text-xl">{title}</span>
+              <span className="text-xl">{t("title")}</span>
             </div>
-            <p className="max-w-[550px] mb-9 text-justify">
-              Welcome to my portfolio! I&apos;m glad you&apos;re here! While
-              I&apos;m currently working on my projects, this space will soon
-              showcase my creative journey and future endeavors. Stay tuned for
-              updates!
-            </p>
+            <p className="max-w-[550px] mb-9 text-justify">{t("intro")}</p>
             <div className="flex flex-col xl:flex-row items-center gap-8">
               <div className="flex items-center">
                 <a
                   href="/assets/Shuja_Ghulamyar_CV.pdf"
                   download
                   className="uppercase flex items-center gap-2"
-                  aria-label="Télécharger le CV"
+                  aria-label={t("download_cv")}
                 >
                   <motion.div
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: "spring" }}
                   >
                     <Button variant="outline" size="lg">
-                      <span>Download CV</span>
+                      <span>{t("download_cv")}</span>
                       <FiDownload className="text-xl" />
                     </Button>
                   </motion.div>

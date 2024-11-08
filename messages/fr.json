@@ -1,0 +1,49 @@
+{
+  "Home": {
+    "hello": "Bonjour ! Je suis",
+    "name": "Shuja Ghulamyar",
+    "title": "Un développeur Full Stack à Montréal",
+    "intro": "Bienvenue sur mon portfolio ! Je suis ravi que vous soyez ici ! Bien que je travaille actuellement sur mes projets, cet espace mettra bientôt en valeur mon parcours créatif et mes projets futurs. Restez à l'affût pour des mises à jour !",
+    "download_cv": "Télécharger le CV"
+  },
+  "About": {
+    "title": "À propos de moi",
+    "intro": "Bonjour ! Je m'appelle Shuja, et je viens d'Afghanistan. J'ai vécu au Canada depuis l'âge de 7 ans et je suis actuellement basé dans la région du Grand Montréal.",
+    "journey": "Mon parcours dans la technologie a commencé dès mon plus jeune âge, poussé par une curiosité sur le fonctionnement des choses, que ce soit des sites web, des jeux vidéo ou des solutions technologiques innovantes. Cette curiosité m'a amené à suivre un programme en informatique au Cégep Édouard-Montpetit, où j'ai obtenu mon diplôme en 2023. Depuis lors, j'ai approfondi mes compétences en développement web moderne sur des plateformes comme Udemy.",
+    "passion": "Je suis passionné par l'apprentissage continu et j'aime explorer de nouvelles tendances et compétences. J'apprécie travailler en collaboration avec les autres, car cela apporte des perspectives fraîches et stimule la créativité. Pendant mon temps libre, j'aime jouer aux jeux vidéo, ce qui m'amuse et stimule également mon imagination."
+  },
+  "Skills": {
+    "title": "Compétences",
+    "frontEnd": {
+      "title": "Front-End",
+      "description": "En tant que développeur front-end, je me spécialise dans la création d'interfaces utilisateur visuellement attrayantes et réactives. Ma maîtrise de HTML, CSS et JavaScript me permet de développer des applications web dynamiques. J'utilise des frameworks comme React et Angular pour améliorer l'interaction utilisateur et simplifier la navigation. De plus, j'utilise Bootstrap pour un style rapide et efficace, et Tailwind CSS pour des ajustements rapides de design sans compromettre la qualité."
+    },
+    "backEnd": {
+      "title": "Back-End",
+      "description": "Pour le back-end, j'utilise des technologies telles que Node.js et ASP.NET Core pour créer des serveurs robustes et gérer les bases de données efficacement. Node.js me permet de créer des applications évolutives capables de traiter des données en temps réel, tandis qu'ASP.NET Core fournit une base solide pour le développement d'applications web haute performance. Je travaille également avec SQL Server pour concevoir et optimiser des bases de données. De plus, Firebase est utilisé pour la gestion en temps réel des bases de données et l'authentification des utilisateurs. Git est un outil essentiel dans mon flux de travail pour la gestion des versions."
+    }
+  },
+  "Projects": {
+    "title": "Projets",
+    "description": "Cette page est dédiée à la présentation de mes futurs projets personnels. Restez à l'affût pour des mises à jour passionnantes alors que je me lance dans de nouveaux défis et partage mes progrès !"
+  },
+  "Contact": {
+    "title": "Contactez-moi",
+    "description": "Je suis ravi de vous entendre ! Que vous ayez des questions, des retours ou que vous vouliez simplement discuter, n'hésitez pas à me contacter.",
+    "name": "Nom",
+    "email": "Email",
+    "message": "Message",
+    "send_message": "Envoyer le message",
+    "sending": "Envoi en cours...",
+    "message_sent": "Message envoyé avec succès !",
+    "error_message": "Échec de l'envoi du message. Veuillez réessayer.",
+    "unexpected_error": "Une erreur inattendue s'est produite. Veuillez réessayer plus tard."
+  },
+  "Nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "contact": "Contact"
+  }
+}

@@ -1,24 +1,39 @@
 // app/layout.jsx
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import ErrorBoundary from "@/components/ErrorBoundary";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
+import { notFound } from "next/navigation";
 
 // Importer la metadata
-import { metadata } from "./metadata";
+import { metadata } from "../metadata";
 
 // components
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import ErrorBoundary from "@/components/ErrorBoundary";
 
+// Pour charger la police JetBrains_Mono
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
   variable: "--font-jetBrainsMono",
 });
 
-export default function Layout({ children }) {
+export default async function Layout({ children, params }) {
+  // Await the params object
+  const { locale } = await params;
+
+  // Vérifier si la locale est valide (tu pourrais également vérifier cela dans un routing comme tu l'as fait précédemment)
+  if (!["en", "fr", "de"].includes(locale)) {
+    notFound();
+  }
+
+  // Charger les messages en fonction de la locale
+  const messages = await getMessages(locale);
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
@@ -56,11 +71,13 @@ export default function Layout({ children }) {
       <body
         className={`${jetBrainsMono.variable} antialiased flex flex-col min-h-screen bg-primary text-white`}
       >
-        <Header />
-        <ErrorBoundary>
-          <main className="flex-grow">{children}</main>
-        </ErrorBoundary>
-        <Footer />
+        <NextIntlClientProvider messages={messages}>
+          <Header />
+          <ErrorBoundary>
+            <main className="flex-grow">{children}</main>
+          </ErrorBoundary>
+          <Footer />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

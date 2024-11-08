@@ -1,8 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
 import Photo from "@/components/Photo";
+import { useTranslations } from "next-intl";
 
-const AboutPage = () => {
+const About = () => {
+  const t = useTranslations("About"); // Utilisation des traductions pour la section 'About'
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -20,7 +23,7 @@ const AboutPage = () => {
             transition={{ delay: 0.4, duration: 0.4 }}
           >
             <h1 className="text-4xl font-semibold mb-4 text-accent">
-              About Me
+              {t("title")}
             </h1>
 
             {/* Photo visible sur petits écrans, juste après le titre */}
@@ -34,26 +37,9 @@ const AboutPage = () => {
             </motion.div>
 
             {/* Paragraphes de texte */}
-            <p className="mb-6 text-justify">
-              Hello! My name is Shuja, and I&apos;m originally from Afghanistan.
-              I&apos;ve lived in Canada since the age of 7 and am currently
-              based in the greater Montreal area.
-            </p>
-            <p className="mb-6 text-justify">
-              My journey into technology began at a young age, fueled by a
-              curiosity about how things work—whether it&apos;s websites, video
-              games, or innovative tech solutions. This curiosity led me to
-              pursue a program in Computer Science at Cégep Édouard-Montpetit,
-              where I graduated in 2023. Since then, I have been deepening my
-              skills in modern web development on platforms like Udemy.
-            </p>
-            <p className="mb-6 text-justify">
-              I&apos;m passionate about continuous learning and enjoy exploring
-              new trends and skills. I love collaborating with others, as
-              working with people brings fresh perspectives and enhances
-              creativity. In my free time, I enjoy gaming, which not only
-              entertains me but also sparks my imagination.
-            </p>
+            <p className="mb-6 text-justify">{t("intro")}</p>
+            <p className="mb-6 text-justify">{t("journey")}</p>
+            <p className="mb-6 text-justify">{t("passion")}</p>
           </motion.div>
 
           {/* Photo visible sur grands écrans uniquement */}
@@ -71,4 +57,4 @@ const AboutPage = () => {
   );
 };
 
-export default AboutPage;
+export default About;
