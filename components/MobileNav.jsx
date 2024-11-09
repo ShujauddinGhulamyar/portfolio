@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { Link } from "@/i18n/routing"; // Import de ton Link personnalisé
 import { useTranslations } from "next-intl"; // Import de useTranslations pour la traduction
 import { CiMenuFries } from "react-icons/ci";
+import LocaleSwitcher from "./LocaleSwitcher";
 
 const links = [
   {
@@ -48,6 +49,7 @@ const MobileNav = () => {
       </SheetTrigger>
       <SheetContent className="flex flex-col justify-center h-full">
         <nav className="flex flex-col justify-center items-center gap-10">
+          <LocaleSwitcher />
           {links.map((link, index) => {
             return (
               <Link
@@ -63,6 +65,7 @@ const MobileNav = () => {
                 {/* Utilisation des clés de traduction du fichier en.json */}
               </Link>
             );
+            <LocaleSwitcher />;
           })}
         </nav>
       </SheetContent>

@@ -3,6 +3,7 @@
 import { Link } from "@/i18n/routing";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
+import LocaleSwitcher from "./LocaleSwitcher";
 
 const links = [
   {
@@ -51,6 +52,7 @@ const Nav = () => {
           </div>
         );
       })}
+      <LocaleSwitcher />
     </nav>
   );
 };
