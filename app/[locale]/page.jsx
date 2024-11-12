@@ -4,7 +4,7 @@ import { FiDownload } from "react-icons/fi";
 import { motion } from "framer-motion";
 import Social from "@/components/Social";
 import { useTranslations } from "next-intl";
-
+import Typewriter from "typewriter-effect";
 const Home = () => {
   const t = useTranslations("Home"); // Utilisation des traductions pour la section 'Home'
 
@@ -22,7 +22,17 @@ const Home = () => {
               <span className="text-[24px] xl:text-[32px]">{t("hello")}</span>
             </h1>
             <h1 className="h1 mb-4">
-              <span className="text-accent">{t("name")}</span>
+              <span className="text-accent">
+                <Typewriter
+                  onInit={(typewriter) => {
+                    typewriter.typeString(`${t("name")}`).start();
+                  }}
+                  options={{
+                    delay: 80, // Vitesse de frappe (en ms)
+                    cursor: "|", // Personnalise le curseur
+                  }}
+                />
+              </span>
             </h1>
             <div className="mb-10">
               <span className="text-xl">{t("title")}</span>
