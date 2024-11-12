@@ -9,7 +9,6 @@ import { FiGithub, FiExternalLink } from "react-icons/fi"; // GitHub and Externa
 const Projects = () => {
   const t = useTranslations("Projects");
 
-  // Example project with multiple images (projects 2 and 3 removed)
   const projects = [
     {
       name: `${t("title_project")} 1`,
@@ -21,11 +20,9 @@ const Projects = () => {
     },
   ];
 
-  // State to manage the current project index and current image index
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Function to go to the next image
   const nextImage = () => {
     setCurrentImageIndex(
       (prevIndex) =>
@@ -33,7 +30,6 @@ const Projects = () => {
     );
   };
 
-  // Function to go to the previous image
   const prevImage = () => {
     setCurrentImageIndex((prevIndex) =>
       prevIndex === 0
@@ -46,21 +42,19 @@ const Projects = () => {
     <motion.section
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ delay: 0.2, duration: 0.4, ease: "easeIn" }}
+      transition={{ delay: 0.2, duration: 0.2, ease: "easeIn" }}
       className="h-full py-10"
     >
       <div className="container mx-auto h-full flex flex-col">
-        {/* Header Section */}
         <motion.div
-          className="text-center mb-8" // Centered the title horizontally
-          initial={{ x: -50, opacity: 0 }}
+          className="text-center mb-8"
+          initial={{ x: -10, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.4, duration: 0.4 }}
+          transition={{ delay: 0.2, duration: 0.2 }}
         >
           <h1 className="text-4xl font-bold text-accent mb-4">{t("title")}</h1>
         </motion.div>
 
-        {/* Display current project without card animation */}
         <div
           key={projects[currentProjectIndex].name}
           className="relative flex flex-col lg:flex-row items-center justify-between border-white/10 p-8 rounded-xl w-full"
@@ -77,13 +71,13 @@ const Projects = () => {
             {/* Navigation arrows with absolute positioning */}
             <button
               onClick={prevImage}
-              className="absolute top-1/2 left-0 transform -translate-y-1/2 p-4 text-gray-700 hover:text-accent transform transition-all duration-150 hover:scale-125 hover:shadow-lg"
+              className="absolute top-1/2 left-0 transform -translate-y-1/2 p-4 text-gray-700 hover:text-accent transition-all duration-150 hover:scale-125 hover:shadow-lg"
             >
               <FiChevronLeft size={32} />
             </button>
             <button
               onClick={nextImage}
-              className="absolute top-1/2 right-0 transform -translate-y-1/2 p-3 text-gray-700 hover:text-accent transform transition-all duration-150 hover:scale-125 hover:shadow-lg"
+              className="absolute top-1/2 right-0 transform -translate-y-1/2 p-3 text-gray-700 hover:text-accent transition-all duration-150 hover:scale-125 hover:shadow-lg"
             >
               <FiChevronRight size={32} />
             </button>
@@ -99,7 +93,7 @@ const Projects = () => {
             </p>
 
             {/* Links to view the code and demo with icons */}
-            <div className="flex space-x-6 mt-4">
+            <div className="flex flex-wrap gap-6 mt-4 justify-center lg:justify-start">
               <a
                 href={projects[currentProjectIndex].github}
                 target="_blank"

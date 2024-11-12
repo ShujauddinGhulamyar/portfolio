@@ -39,16 +39,16 @@ const Skills = () => {
     <motion.section
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ delay: 0.2, duration: 0.4, ease: "easeIn" }}
+      transition={{ delay: 0.2, duration: 0.2, ease: "easeIn" }}
       className="h-full py-10"
     >
       <div className="container mx-auto h-full flex flex-col">
         {/* Header Section */}
         <motion.div
           className="text-center mb-8" // Centered the title horizontally
-          initial={{ x: -50, opacity: 0 }}
+          initial={{ x: -10, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.4, duration: 0.4 }}
+          transition={{ delay: 0.2, duration: 0.2 }}
         >
           <h1 className="text-4xl font-bold text-accent mb-4">{t("title")}</h1>
         </motion.div>

@@ -84,16 +84,16 @@ const Contact = () => {
     <motion.section
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ delay: 0.2, duration: 0.4, ease: "easeIn" }}
+      transition={{ delay: 0.2, duration: 0.2, ease: "easeIn" }}
       className="h-full py-10"
     >
       <div className="container mx-auto h-full flex flex-col justify-center">
         {/* Titre centré horizontalement */}
         <motion.div
           className="text-center mb-8" // Just 'text-center' to horizontally center
-          initial={{ y: -20, opacity: 0 }}
+          initial={{ y: -10, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.4, duration: 0.4 }}
+          transition={{ delay: 0.2, duration: 0.2 }}
         >
           <h3 className="text-4xl font-semibold text-accent mb-4">
             {t("title")}
