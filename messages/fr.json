@@ -1,14 +1,14 @@
 {
   "Home": {
-    "hello": "Bonjour ! Je suis",
+    "hello": "Bonjour! Je suis",
     "name": "Shuja Ghulamyar",
     "title": "Un développeur Full Stack à Montréal",
-    "intro": "Bienvenue sur mon portfolio ! Je suis ravi que vous soyez ici ! Bien que je travaille actuellement sur mes projets, cet espace mettra bientôt en valeur mon parcours créatif et mes projets futurs. Restez à l'affût pour des mises à jour !",
+    "intro": "Bienvenue sur mon portfolio! Je suis ravi que vous soyez ici! Bien que je travaille actuellement sur mes projets, cet espace mettra bientôt en valeur mon parcours créatif et mes projets futurs. Restez à l'affût pour des mises à jour!",
     "download_cv": "Télécharger le CV"
   },
   "About": {
     "title": "À propos de moi",
-    "intro": "Bonjour ! Je m'appelle Shuja, et je viens d'Afghanistan. J'ai vécu au Canada depuis l'âge de 7 ans et je suis actuellement basé dans la région du Grand Montréal.",
+    "intro": "Bonjour! Je m'appelle Shuja, et je viens d'Afghanistan. J'ai vécu au Canada depuis l'âge de 7 ans et je suis actuellement basé dans la région du Grand Montréal.",
     "journey": "Mon parcours dans la technologie a commencé dès mon plus jeune âge, poussé par une curiosité sur le fonctionnement des choses, que ce soit des sites web, des jeux vidéo ou des solutions technologiques innovantes. Cette curiosité m'a amené à suivre un programme en informatique au Cégep Édouard-Montpetit, où j'ai obtenu mon diplôme en 2023. Depuis lors, j'ai approfondi mes compétences en développement web moderne sur des plateformes comme Udemy.",
     "passion": "Je suis passionné par l'apprentissage continu et j'aime explorer de nouvelles tendances et compétences. J'apprécie travailler en collaboration avec les autres, car cela apporte des perspectives fraîches et stimule la créativité. Pendant mon temps libre, j'aime jouer aux jeux vidéo, ce qui m'amuse et stimule également mon imagination."
   },
@@ -25,19 +25,31 @@
   },
   "Projects": {
     "title": "Projets",
-    "description": "Cette page est dédiée à la présentation de mes futurs projets personnels. Restez à l'affût pour des mises à jour passionnantes alors que je me lance dans de nouveaux défis et partage mes progrès !"
+    "title_project": "Projet",
+    "description": "Cette page est dédiée à la présentation de mes futurs projets personnels. Restez à l'affût pour des mises à jour passionnantes alors que je me lance dans de nouveaux défis et partage mes progrès!",
+    "Source_code": "Voir la code source",
+    "Demo": "Voir la démo"
   },
   "Contact": {
     "title": "Contactez-moi",
-    "description": "Je suis ravi de vous entendre ! Que vous ayez des questions, des retours ou que vous vouliez simplement discuter, n'hésitez pas à me contacter.",
+    "description": "Je suis ravi de vous entendre! Que vous ayez des questions, des retours ou que vous vouliez simplement discuter, n'hésitez pas à me contacter.",
     "name": "Nom",
     "email": "Email",
     "message": "Message",
     "send_message": "Envoyer le message",
-    "sending": "Envoi en cours...",
-    "message_sent": "Message envoyé avec succès !",
+    "sending": "Envoi en cours ...",
+    "message_sent": "Message envoyé avec succès!",
     "error_message": "Échec de l'envoi du message. Veuillez réessayer.",
-    "unexpected_error": "Une erreur inattendue s'est produite. Veuillez réessayer plus tard."
+    "unexpected_error": "Une erreur inattendue s'est produite. Veuillez réessayer plus tard.",
+    "name_required": "Le nom est requis",
+    "name_max_length": "Le nom ne doit pas dépasser 50 caractères",
+    "name_invalid": "Le nom ne doit pas contenir de chiffres ou de caractères spéciaux",
+    "email_required": "L'e-mail est requis",
+    "email_invalid": "E-mail invalide",
+    "email_max_length": "L'e-mail ne doit pas dépasser 254 caractères",
+    "email_invalid_format": "L'e-mail doit être dans un format valide",
+    "message_required": "Le message est requis",
+    "message_max_length": "Le message ne doit pas dépasser 500 caractères"
   },
   "Nav": {
     "home": "Accueil",

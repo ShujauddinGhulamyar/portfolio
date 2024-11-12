@@ -25,7 +25,10 @@
   },
   "Projects": {
     "title": "Projects",
-    "description": "This page is dedicated to showcasing my future personal projects. Stay tuned for exciting updates as I embark on new challenges and share my progress!"
+    "title_project": "Project",
+    "description": "This page is dedicated to showcasing my future personal projects. Stay tuned for exciting updates as I embark on new challenges and share my progress!",
+    "Source_code": "View the source code",
+    "Demo": "View the demo"
   },
   "Contact": {
     "title": "Get in Touch",

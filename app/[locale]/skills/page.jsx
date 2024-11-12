@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 const Skills = () => {
-  const t = useTranslations("Skills"); // Utilisation des traductions pour la page Skills
+  const t = useTranslations("Skills");
 
   const frontEndLogos = [
     { src: "/assets/html.svg", alt: "HTML", name: "HTML" },
@@ -40,68 +40,71 @@ const Skills = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.2, duration: 0.4, ease: "easeIn" }}
-      className="h-full"
+      className="h-full py-10"
     >
-      <div className="container mx-auto h-full flex flex-col justify-between">
-        <div className="flex flex-col xl:flex-row justify-between items-start">
-          <motion.div
-            className="flex-1 text-center xl:text-left mb-8 xl:mb-0 xl:order-1"
-            initial={{ x: -50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.4 }}
-          >
-            <h1 className="text-4xl font-semibold mb-4 text-accent">
-              {t("title")}
-            </h1>
+      <div className="container mx-auto h-full flex flex-col">
+        {/* Header Section */}
+        <motion.div
+          className="text-center mb-8" // Centered the title horizontally
+          initial={{ x: -50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.4 }}
+        >
+          <h1 className="text-4xl font-bold text-accent mb-4">{t("title")}</h1>
+        </motion.div>
 
-            <div className="mb-6 text-justify">
-              <h2 className="text-xl font-semibold mb-2">
-                {t("frontEnd.title")}
-              </h2>
-              <p className="mb-4">{t("frontEnd.description")}</p>
+        {/* Front-End Skills */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-semibold text-center mb-8">
+            {t("frontEnd.title")}
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 px-6">
+            {frontEndLogos.map((logo) => (
+              <motion.div
+                key={logo.alt}
+                className="flex flex-col items-center justify-center border border-white/10 p-4 rounded-lg shadow-lg hover:scale-105 transform transition duration-300"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}
+              >
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={48} // Reduced the size of the logos
+                  height={48} // Reduced the size of the logos
+                  className="mb-4"
+                />
+                <span className="text-sm text-white">{logo.name}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
 
-              <div className="flex flex-wrap gap-4 justify-center mb-8">
-                {frontEndLogos.map((logo) => (
-                  <div
-                    key={logo.alt}
-                    className="flex flex-col items-center justify-center w-24 h-32 border border-white/10 rounded-lg p-4 shadow-lg transition-transform duration-200 transform hover:scale-105"
-                  >
-                    <Image
-                      src={logo.src}
-                      alt={logo.alt}
-                      width={64}
-                      height={64}
-                      className="mb-2"
-                    />
-                    <span className="text-center text-sm">{logo.name}</span>
-                  </div>
-                ))}
-              </div>
-
-              <h2 className="text-xl font-semibold mb-2">
-                {t("backEnd.title")}
-              </h2>
-              <p className="mb-4">{t("backEnd.description")}</p>
-
-              <div className="flex flex-wrap gap-4 justify-center">
-                {backEndLogos.map((logo) => (
-                  <div
-                    key={logo.alt}
-                    className="flex flex-col items-center justify-center w-24 h-32 border border-white/10 rounded-lg p-4 shadow-lg transition-transform duration-200 transform hover:scale-105"
-                  >
-                    <Image
-                      src={logo.src}
-                      alt={logo.alt}
-                      width={64}
-                      height={64}
-                      className="mb-2"
-                    />
-                    <span className="text-center text-sm">{logo.name}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
+        {/* Back-End Skills */}
+        <div>
+          <h2 className="text-3xl font-semibold text-center mb-8">
+            {t("backEnd.title")}
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 px-6">
+            {backEndLogos.map((logo) => (
+              <motion.div
+                key={logo.alt}
+                className="flex flex-col items-center justify-center border border-white/10 p-4 rounded-lg shadow-lg hover:scale-105 transform transition duration-300"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}
+              >
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={48} // Reduced the size of the logos
+                  height={48} // Reduced the size of the logos
+                  className="mb-4"
+                />
+                <span className="text-sm text-white">{logo.name}</span>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </motion.section>

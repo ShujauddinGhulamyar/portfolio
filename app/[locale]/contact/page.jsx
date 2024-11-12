@@ -83,15 +83,14 @@ const Contact = () => {
   return (
     <motion.section
       initial={{ opacity: 0 }}
-      animate={{
-        opacity: 1,
-        transition: { delay: 0.2, duration: 0.4, ease: "easeIn" },
-      }}
-      className="h-full"
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.2, duration: 0.4, ease: "easeIn" }}
+      className="h-full py-10"
     >
       <div className="container mx-auto h-full flex flex-col justify-center">
+        {/* Titre centré horizontalement */}
         <motion.div
-          className="flex-1 text-center mb-8"
+          className="text-center mb-8" // Just 'text-center' to horizontally center
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.4 }}
@@ -99,13 +98,13 @@ const Contact = () => {
           <h3 className="text-4xl font-semibold text-accent mb-4">
             {t("title")}
           </h3>
-          <p className="text-white">{t("description")}</p>
         </motion.div>
 
+        {/* Formulaire */}
         <motion.div className="flex flex-col xl:flex-row gap-6">
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-col gap-4 p-8 bg-transparent rounded-xl flex-1"
+            className="flex flex-col gap-6 p-8 bg-transparent rounded-xl flex-1 border-white/10"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="flex flex-col">
@@ -149,7 +148,7 @@ const Contact = () => {
               </label>
               <Textarea
                 id="message"
-                className="h-[150px]"
+                className="h-[300px]"
                 placeholder={t("message")}
                 maxLength={500}
                 {...register("message")}
@@ -160,7 +159,9 @@ const Contact = () => {
                 </p>
               )}
             </div>
-            <motion.div className="flex justify-center">
+
+            {/* Bouton de soumission */}
+            <motion.div className="flex justify-center mt-6">
               <motion.div
                 whileHover={{ scale: 1.1 }}
                 transition={{ type: "spring" }}
@@ -176,6 +177,8 @@ const Contact = () => {
                 </Button>
               </motion.div>
             </motion.div>
+
+            {/* Messages de réussite ou d'erreur */}
             {submitSuccess && (
               <p className="text-green-500 mt-2">{t("message_sent")}</p>
             )}

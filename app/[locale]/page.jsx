@@ -32,8 +32,7 @@ const Home = () => {
               <div className="flex items-center">
                 <a
                   href="/assets/Shuja_Ghulamyar_CV.pdf"
-                  download
-                  className="uppercase flex items-center gap-2"
+                  className="uppercase flex items-center gap-4" // Augmenté le gap ici
                   aria-label={t("download_cv")}
                 >
                   <motion.div
@@ -42,7 +41,8 @@ const Home = () => {
                   >
                     <Button variant="outline" size="lg">
                       <span>{t("download_cv")}</span>
-                      <FiDownload className="text-xl" />
+                      <FiDownload className="text-xl ml-2" />{" "}
+                      {/* Ajout de ml-2 pour espacer l'icône */}
                     </Button>
                   </motion.div>
                 </a>
