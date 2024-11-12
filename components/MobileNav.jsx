@@ -1,42 +1,38 @@
 "use client";
+
 import { useState } from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { usePathname } from "next/navigation";
+import { usePathname } from "@/i18n/routing";
 import { Link } from "@/i18n/routing"; // Import de ton Link personnalisé
 import { useTranslations } from "next-intl"; // Import de useTranslations pour la traduction
 import { CiMenuFries } from "react-icons/ci";
 import LocaleSwitcher from "./LocaleSwitcher";
 
+// Liste des liens de navigation
 const links = [
-  {
-    key: "home",
-    path: "/",
-  },
-  {
-    key: "about",
-    path: "/about",
-  },
-  {
-    key: "skills",
-    path: "/skills",
-  },
-  {
-    key: "projects",
-    path: "/projects",
-  },
-  {
-    key: "contact",
-    path: "/contact",
-  },
+  { key: "home", path: "/" },
+  { key: "about", path: "/about" },
+  { key: "skills", path: "/skills" },
+  { key: "projects", path: "/projects" },
+  { key: "contact", path: "/contact" },
 ];
 
 const MobileNav = () => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-  const t = useTranslations("Nav"); // Utilisation des traductions pour la section 'Nav'
+  const t = useTranslations("Nav");
+
+  // Fonction pour obtenir le chemin sans le préfixe de langue
+  const getPathWithoutLocalePrefix = (pathname) => {
+    const pathParts = pathname.split("/");
+    pathParts.shift(); // On enlève le premier segment (la langue)
+    return "/" + pathParts.join("/");
+  };
+
+  const normalizedPathname = getPathWithoutLocalePrefix(pathname);
 
   const handleLinkClick = () => {
-    setIsOpen(false); // Ferme le menu
+    setIsOpen(false); // Ferme le menu lorsque le lien est cliqué
   };
 
   return (
@@ -51,21 +47,23 @@ const MobileNav = () => {
         <nav className="flex flex-col justify-center items-center gap-10">
           <LocaleSwitcher />
           {links.map((link, index) => {
+            // Vérification si le lien est actif
+            const isActive = normalizedPathname === link.path;
+
             return (
               <Link
                 href={link.path}
                 key={index}
                 onClick={handleLinkClick} // Ferme le menu lors du clic
                 className={`${
-                  link.path === pathname &&
-                  "text-accent border-b-2 border-accent"
-                } text-3xl capitalize hover:text-accent transition-all`}
+                  isActive
+                    ? "text-accent border-b-2 border-accent"
+                    : "hover:text-accent"
+                } text-3xl capitalize transition-all`}
               >
-                {t(link.key)}{" "}
-                {/* Utilisation des clés de traduction du fichier en.json */}
+                {t(link.key)} {/* Utilisation des clés de traduction */}
               </Link>
             );
-            <LocaleSwitcher />;
           })}
         </nav>
       </SheetContent>
