@@ -17,9 +17,9 @@ const Home = () => {
     >
       <div className="container mx-auto h-full">
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pb-50">
-          <div className="text-center xl:text-left xl:ml-40">
+          <div className="text-center xl:text-left xl:ml-40 mt-10">
             <h1 className="h1">
-              <span className="text-[24px] xl:text-[32px]">{t("hello")}</span>
+              <span>{t("hello")}</span>
             </h1>
             <h1 className="h1 mb-4">
               <span className="text-accent">

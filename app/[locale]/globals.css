@@ -7,6 +7,6 @@
     @apply font-primary bg-primary text-white leading-loose;
   }
   .h1 {
-    @apply text-[48px] xl:text-[88px] leading-[1.1] font-semibold;
+    @apply text-[48px] xl:text-[75px] leading-[1.1] font-semibold;
   }
 }
