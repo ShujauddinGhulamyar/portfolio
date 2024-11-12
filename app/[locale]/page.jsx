@@ -32,8 +32,9 @@ const Home = () => {
               <div className="flex items-center">
                 <a
                   href="/assets/Shuja_Ghulamyar_CV.pdf"
-                  className="uppercase flex items-center gap-4" // Augmenté le gap ici
+                  className="uppercase flex items-center gap-4"
                   aria-label={t("download_cv")}
+                  download="Shuja_Ghulamyar_CV.pdf"
                 >
                   <motion.div
                     whileHover={{ scale: 1.1 }}
