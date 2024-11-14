@@ -81,15 +81,15 @@ const Contact = () => {
 
   return (
     <motion.section
-      id="contact" // ID correspondant à l'ancre
+      id="contact"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: false, amount: 0.3 }}
+      viewport={{ once: false, amount: 0.3 }} // L'animation se déclenche chaque fois que la section devient visible
       transition={{ duration: 0.8, ease: "easeInOut" }}
       className="h-full py-10"
     >
       <div className="container mx-auto h-full flex flex-col">
-        {/* Animation du titre avec translation et bounce */}
+        {/* Animation du titre */}
         <motion.div
           className="text-center mb-8"
           initial={{ y: 50, opacity: 0 }}
@@ -100,6 +100,7 @@ const Contact = () => {
             type: "spring",
             stiffness: 50,
           }}
+          viewport={{ once: false, amount: 0.3 }} // Relance l'animation chaque fois que l'élément devient visible
         >
           <h3 className="text-4xl font-semibold text-accent mb-4">
             {t("title")}
@@ -118,6 +119,7 @@ const Contact = () => {
             type: "spring",
             bounce: 0.3,
           }}
+          viewport={{ once: false, amount: 0.3 }} // Relance l'animation chaque fois que l'élément devient visible
         >
           <form
             onSubmit={handleSubmit(onSubmit)}
@@ -135,6 +137,7 @@ const Contact = () => {
                 stiffness: 100,
                 damping: 20,
               }}
+              viewport={{ once: false, amount: 0.3 }}
             >
               {/* Champ "Nom" */}
               <div className="flex flex-col">
@@ -187,6 +190,7 @@ const Contact = () => {
                 stiffness: 100,
                 damping: 20,
               }}
+              viewport={{ once: false, amount: 0.3 }}
             >
               <label htmlFor="message" className="sr-only">
                 {t("message")}

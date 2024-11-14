@@ -43,7 +43,8 @@ const Projects = () => {
     <motion.section
       id="projects"
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: false, amount: 0.3 }} // Animation déclenchée à chaque fois que la section devient visible
       transition={{ delay: 0.2, duration: 0.6, ease: "easeInOut" }}
       className="h-full py-10"
     >
@@ -53,8 +54,8 @@ const Projects = () => {
           className="text-center mb-8"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 50 }} // Animation de sortie
           transition={{ delay: 0.3, duration: 0.6, ease: "easeInOut" }}
+          viewport={{ once: false, amount: 0.3 }}
         >
           <h1 className="text-4xl font-bold text-accent mb-4">{t("title")}</h1>
         </motion.div>
@@ -69,12 +70,7 @@ const Projects = () => {
             y: 0,
             transition: { type: "spring", stiffness: 80, damping: 20 },
           }}
-          exit={{
-            opacity: 0,
-            y: 100,
-            transition: { duration: 0.3, ease: "easeInOut" },
-          }}
-          viewport={{ once: false, amount: 0.3 }} // Se réactive à chaque fois que la section est visible
+          viewport={{ once: false, amount: 0.3 }}
         >
           {/* Image du projet avec animation */}
           <motion.div
@@ -84,11 +80,6 @@ const Projects = () => {
               opacity: 1,
               x: 0,
               transition: { type: "spring", stiffness: 100, damping: 25 },
-            }}
-            exit={{
-              opacity: 0,
-              x: -50,
-              transition: { duration: 0.3, ease: "easeInOut" },
             }}
             viewport={{ once: false, amount: 0.3 }}
           >
@@ -122,11 +113,6 @@ const Projects = () => {
               opacity: 1,
               x: 0,
               transition: { type: "spring", stiffness: 100, damping: 25 },
-            }}
-            exit={{
-              opacity: 0,
-              x: 50,
-              transition: { duration: 0.3, ease: "easeInOut" },
             }}
             viewport={{ once: false, amount: 0.3 }}
           >
