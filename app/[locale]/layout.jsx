@@ -18,13 +18,10 @@ const jetBrainsMono = JetBrains_Mono({
 
 export default async function Layout({ children, params }) {
   const { locale } = await params;
-  console.log(locale);
-  // Ensure that the incoming `locale` is valid
   if (!routing.locales.includes(locale)) {
     notFound();
   }
 
-  // Charger les messages en fonction de la locale
   const messages = await getMessages(locale);
 
   return (

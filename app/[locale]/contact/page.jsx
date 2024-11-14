@@ -35,7 +35,7 @@ const schema = yup.object().shape({
 });
 
 const Contact = () => {
-  const t = useTranslations("Contact"); // Utilisation de useTranslations pour la section Contact
+  const t = useTranslations("Contact");
   const {
     register,
     handleSubmit,

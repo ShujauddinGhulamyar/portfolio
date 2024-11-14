@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Home from "./home/page"; // Section d'accueil
-import About from "./about/page"; // Section À propos
-import Skills from "./skills/page"; // Section Compétences
-import Projects from "./projects/page"; // Section Projets
-import Contact from "./contact/page"; // Section Contact
-import { motion } from "framer-motion"; // Importation de Framer Motion pour l'animation
+import Home from "./home/page";
+import About from "./about/page";
+import Skills from "./skills/page";
+import Projects from "./projects/page";
+import Contact from "./contact/page";
+import { motion } from "framer-motion";
 
 const Page = () => {
   // État pour suivre la position de la section active

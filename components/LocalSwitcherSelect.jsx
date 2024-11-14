@@ -16,7 +16,6 @@ export default function LocaleSwitcher({ label, defaultValue }) {
     startTransition(() => {
       router.replace({ pathname, params }, { locale });
     });
-    console.log(locale);
   }
 
   return (

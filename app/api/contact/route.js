@@ -2,44 +2,31 @@ import nodemailer from "nodemailer";
 
 export async function POST(req) {
   try {
-    // Parse the incoming JSON data from the request
-    const { name, email, message } = await req.json(); // Suppression de optionalInfo
-    console.log("Received data:", { name, email, message });
+    const { name, email, message } = await req.json();
 
-    // Log email credentials for debugging
-    console.log("EMAIL_USER:", process.env.EMAIL_USER);
-    console.log("EMAIL_PASS:", process.env.EMAIL_PASS);
-
-    // Create a Nodemailer transporter
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.EMAIL_USER, // Your email address from .env
-        pass: process.env.EMAIL_PASS, // Your app password from .env
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
-    // Verify the transporter
     await transporter.verify();
-    console.log("Server is ready to take our messages");
 
-    // Set up the email options
     const mailOptions = {
-      from: email, // Sender address
-      to: process.env.EMAIL_USER, // Recipient address (your email)
-      subject: `New message from ${name}`, // Email subject
+      from: email,
+      to: process.env.EMAIL_USER,
+      subject: `New message from ${name}`,
       text: `
         Name: ${name}
         Email: ${email}
         Message: ${message}
-      `, // Email body
+      `,
     };
 
-    // Send the email
     await transporter.sendMail(mailOptions);
-    console.log("Email sent successfully");
 
-    // Return a success response
     return new Response(
       JSON.stringify({ message: "Email sent successfully" }),
       { status: 200 }

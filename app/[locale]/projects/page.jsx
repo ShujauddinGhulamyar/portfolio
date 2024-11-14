@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi"; // Arrow icons
-import { FiGithub, FiExternalLink } from "react-icons/fi"; // GitHub and External Link icons
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { FiGithub, FiExternalLink } from "react-icons/fi";
 
 const Projects = () => {
   const t = useTranslations("Projects");
@@ -15,9 +15,9 @@ const Projects = () => {
       name: `${t("title_project")} 1`,
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum, mi et bibendum auctor, leo ipsum gravida est, non luctus erat sapien id magna. Curabitur sit amet sem vitae orci ullamcorper gravida. Ut et nisi id leo tempor fermentum. Cras sed massa id nisl pharetra fermentum.",
-      images: ["/assets/coming-soon.webp"], // List of images for the project
-      demoLink: "#", // Demo link
-      github: "https://github.com/username/project1", // GitHub link
+      images: ["/assets/coming-soon.webp"],
+      demoLink: "#",
+      github: "https://github.com/username/project1",
     },
   ];
 

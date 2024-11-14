@@ -42,7 +42,7 @@ const Skills = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: false, amount: 0.3 }}
-      transition={{ duration: 0.6, ease: "easeInOut" }} // Shorter duration
+      transition={{ duration: 0.6, ease: "easeInOut" }}
       className="h-full py-10"
     >
       <div className="container mx-auto h-full flex flex-col">
@@ -53,27 +53,26 @@ const Skills = () => {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{
             delay: 0.1,
-            duration: 0.4, // Shorter duration for smoother animation
+            duration: 0.4,
             type: "spring",
-            stiffness: 100, // Increased stiffness for quicker bounce
+            stiffness: 100,
             damping: 25,
           }}
         >
           <h1 className="text-4xl font-bold text-accent mb-4">{t("title")}</h1>
         </motion.div>
 
-        {/* Front-End Skills avec animation de bascule et de bounce */}
         <motion.div
           className="mb-16"
           initial={{ opacity: 0 }}
           whileInView={{
             opacity: 1,
             y: 0,
-            transition: { type: "spring", bounce: 0.3, stiffness: 80 }, // Reduced bounce
+            transition: { type: "spring", bounce: 0.3, stiffness: 80 },
           }}
           transition={{
             delay: 0.2,
-            duration: 0.5, // Shorter duration
+            duration: 0.5,
             ease: "easeOut",
           }}
         >
@@ -90,13 +89,13 @@ const Skills = () => {
                   opacity: 1,
                   y: 0,
                   rotate: 0,
-                  scale: 1.05, // Reduced scale for smoother effect
+                  scale: 1.05,
                 }}
                 transition={{
                   delay: 0.2,
-                  duration: 0.5, // Shorter duration
+                  duration: 0.5,
                   type: "spring",
-                  stiffness: 80, // Increased stiffness for a quicker animation
+                  stiffness: 80,
                   damping: 15,
                 }}
               >
@@ -113,18 +112,17 @@ const Skills = () => {
           </div>
         </motion.div>
 
-        {/* Back-End Skills avec effet similaire de bascule et de bounce */}
         <motion.div
           className="mb-16"
           initial={{ opacity: 0 }}
           whileInView={{
             opacity: 1,
             y: 0,
-            transition: { type: "spring", bounce: 0.3, stiffness: 80 }, // Reduced bounce
+            transition: { type: "spring", bounce: 0.3, stiffness: 80 },
           }}
           transition={{
             delay: 0.2,
-            duration: 0.5, // Shorter duration
+            duration: 0.5,
             ease: "easeOut",
           }}
         >
@@ -141,13 +139,13 @@ const Skills = () => {
                   opacity: 1,
                   y: 0,
                   rotate: 0,
-                  scale: 1.05, // Reduced scale for smoother effect
+                  scale: 1.05,
                 }}
                 transition={{
                   delay: 0.2,
-                  duration: 0.5, // Shorter duration
+                  duration: 0.5,
                   type: "spring",
-                  stiffness: 80, // Increased stiffness for quicker animation
+                  stiffness: 80,
                   damping: 15,
                 }}
               >
