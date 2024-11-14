@@ -1,75 +1,104 @@
 "use client";
-import { Button } from "@/components/ui/button";
-import { FiDownload } from "react-icons/fi";
-import { motion } from "framer-motion";
-import Social from "@/components/Social";
-import { useTranslations } from "next-intl";
-import Typewriter from "typewriter-effect";
-const Home = () => {
-  const t = useTranslations("Home"); // Utilisation des traductions pour la section 'Home'
+
+import React, { useState, useEffect } from "react";
+import Home from "./home/page"; // Section d'accueil
+import About from "./about/page"; // Section À propos
+import Skills from "./skills/page"; // Section Compétences
+import Projects from "./projects/page"; // Section Projets
+import Contact from "./contact/page"; // Section Contact
+import { motion } from "framer-motion"; // Importation de Framer Motion pour l'animation
+
+const Page = () => {
+  // État pour suivre la position de la section active
+  const [activeSection, setActiveSection] = useState(null);
+
+  // Fonction pour observer le défilement et définir la section active
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ["home", "about", "skills", "projects", "contact"];
+      let currentSection = null;
+
+      sections.forEach((section) => {
+        const sectionElement = document.getElementById(section);
+        if (sectionElement) {
+          const rect = sectionElement.getBoundingClientRect();
+          if (
+            rect.top <= window.innerHeight / 2 &&
+            rect.bottom >= window.innerHeight / 2
+          ) {
+            currentSection = section;
+          }
+        }
+      });
+
+      setActiveSection(currentSection);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Appeler la fonction au chargement initial
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Définir la largeur de la ligne en fonction de la section active
+  const getLineWidth = (sectionId) => {
+    return activeSection === sectionId ? "50%" : "20%"; // Largeur change selon la section active
+  };
 
   return (
-    <motion.section
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 0.2, duration: 0.2, ease: "easeIn" }}
-      className="h-full"
-    >
-      <div className="container mx-auto h-full">
-        <div className="flex flex-col xl:flex-row items-center justify-between xl:pb-50">
-          <div className="text-center xl:text-left xl:ml-40 mt-10">
-            <h1 className="h1">
-              <span>{t("hello")}</span>
-            </h1>
-            <h1 className="h1 mb-4">
-              <span className="text-accent">
-                <Typewriter
-                  onInit={(typewriter) => {
-                    typewriter.typeString(`${t("name")}`).start();
-                  }}
-                  options={{
-                    delay: 80, // Vitesse de frappe (en ms)
-                    cursor: "|", // Personnalise le curseur
-                  }}
-                />
-              </span>
-            </h1>
-            <div className="mb-10">
-              <span className="text-xl">{t("title")}</span>
-            </div>
-            <p className="max-w-[550px] mb-9 text-justify">{t("intro")}</p>
-            <div className="flex flex-col xl:flex-row items-center gap-8">
-              <div className="flex items-center">
-                <a
-                  href="/assets/Shuja_Ghulamyar_CV.pdf"
-                  className="uppercase flex items-center gap-4"
-                  aria-label={t("download_cv")}
-                  download="Shuja_Ghulamyar_CV.pdf"
-                >
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ type: "spring" }}
-                  >
-                    <Button variant="outline" size="lg">
-                      <span>{t("download_cv")}</span>
-                      <FiDownload className="text-xl ml-2" />{" "}
-                      {/* Ajout de ml-2 pour espacer l'icône */}
-                    </Button>
-                  </motion.div>
-                </a>
-              </div>
-              <div className="flex gap-6">
-                <Social
-                  containerStyles="flex gap-6"
-                  iconStyles="w-9 h-9 border border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary hover:transition-all duration-500"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </motion.section>
+    <div>
+      {/* Section d'accueil */}
+      <Home />
+
+      {/* Ligne séparatrice entre les sections */}
+      <motion.div
+        className="mx-auto my-16 h-[1px] bg-accent" // Réduction de l'épaisseur ici
+        style={{ width: getLineWidth("home") }} // Change la largeur de la ligne
+        initial={{ width: 0 }}
+        animate={{ width: getLineWidth("home") }}
+        transition={{ duration: 1, ease: "easeInOut" }}
+      />
+
+      {/* Section À propos */}
+      <About />
+
+      {/* Ligne séparatrice entre les sections */}
+      <motion.div
+        className="mx-auto my-16 h-[1px] bg-accent" // Réduction de l'épaisseur ici
+        style={{ width: getLineWidth("about") }}
+        initial={{ width: 0 }}
+        animate={{ width: getLineWidth("about") }}
+        transition={{ duration: 1, ease: "easeInOut" }}
+      />
+
+      {/* Section Compétences */}
+      <Skills />
+
+      {/* Ligne séparatrice entre les sections */}
+      <motion.div
+        className="mx-auto my-16 h-[1px] bg-accent" // Réduction de l'épaisseur ici
+        style={{ width: getLineWidth("skills") }}
+        initial={{ width: 0 }}
+        animate={{ width: getLineWidth("skills") }}
+        transition={{ duration: 1, ease: "easeInOut" }}
+      />
+
+      {/* Section Projets */}
+      <Projects />
+
+      {/* Ligne séparatrice entre les sections */}
+      <motion.div
+        className="mx-auto my-16 h-[1px] bg-accent" // Réduction de l'épaisseur ici
+        style={{ width: getLineWidth("projects") }}
+        initial={{ width: 0 }}
+        animate={{ width: getLineWidth("projects") }}
+        transition={{ duration: 1, ease: "easeInOut" }}
+      />
+
+      {/* Section Contact */}
+      <Contact />
+    </div>
   );
 };
 
-export default Home;
+export default Page;

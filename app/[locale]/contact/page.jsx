@@ -1,5 +1,4 @@
 "use client";
-
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -82,31 +81,62 @@ const Contact = () => {
 
   return (
     <motion.section
+      id="contact" // ID correspondant à l'ancre
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 0.2, duration: 0.2, ease: "easeIn" }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: false, amount: 0.3 }}
+      transition={{ duration: 0.8, ease: "easeInOut" }}
       className="h-full py-10"
     >
-      <div className="container mx-auto h-full flex flex-col justify-center">
-        {/* Titre centré horizontalement */}
+      <div className="container mx-auto h-full flex flex-col">
+        {/* Animation du titre avec translation et bounce */}
         <motion.div
-          className="text-center mb-8" // Just 'text-center' to horizontally center
-          initial={{ y: -10, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.2 }}
+          className="text-center mb-8"
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{
+            delay: 0.2,
+            duration: 0.6,
+            type: "spring",
+            stiffness: 50,
+          }}
         >
           <h3 className="text-4xl font-semibold text-accent mb-4">
             {t("title")}
           </h3>
         </motion.div>
 
-        {/* Formulaire */}
-        <motion.div className="flex flex-col xl:flex-row gap-6">
+        {/* Formulaire avec animation de bascule et de bounce */}
+        <motion.div
+          className="flex flex-col xl:flex-row gap-6"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.4,
+            duration: 0.6,
+            ease: "easeOut",
+            type: "spring",
+            bounce: 0.3,
+          }}
+        >
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col gap-6 p-8 bg-transparent rounded-xl flex-1 border-white/10"
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Champs "Nom" et "Email" sur la même ligne */}
+            <motion.div
+              className="grid grid-cols-1 xl:grid-cols-2 gap-6"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: 0.4,
+                duration: 0.6,
+                type: "spring",
+                stiffness: 100,
+                damping: 20,
+              }}
+            >
+              {/* Champ "Nom" */}
               <div className="flex flex-col">
                 <label htmlFor="name" className="sr-only">
                   {t("name")}
@@ -124,6 +154,8 @@ const Contact = () => {
                   </p>
                 )}
               </div>
+
+              {/* Champ "Email" */}
               <div className="flex flex-col">
                 <label htmlFor="email" className="sr-only">
                   {t("email")}
@@ -141,8 +173,21 @@ const Contact = () => {
                   </p>
                 )}
               </div>
-            </div>
-            <div className="flex flex-col">
+            </motion.div>
+
+            {/* Champ "Message" */}
+            <motion.div
+              className="flex flex-col"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: 0.6,
+                duration: 0.6,
+                type: "spring",
+                stiffness: 100,
+                damping: 20,
+              }}
+            >
               <label htmlFor="message" className="sr-only">
                 {t("message")}
               </label>
@@ -158,9 +203,9 @@ const Contact = () => {
                   {errors.message.message}
                 </p>
               )}
-            </div>
+            </motion.div>
 
-            {/* Bouton de soumission */}
+            {/* Bouton de soumission avec animation de survol */}
             <motion.div className="flex justify-center mt-6">
               <motion.div
                 whileHover={{ scale: 1.1 }}
@@ -178,12 +223,26 @@ const Contact = () => {
               </motion.div>
             </motion.div>
 
-            {/* Messages de réussite ou d'erreur */}
+            {/* Messages de succès ou d'erreur */}
             {submitSuccess && (
-              <p className="text-green-500 mt-2">{t("message_sent")}</p>
+              <motion.p
+                className="text-green-500 mt-2"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6 }}
+              >
+                {t("message_sent")}
+              </motion.p>
             )}
             {errorMessage && (
-              <p className="text-red-500 mt-2">{errorMessage}</p>
+              <motion.p
+                className="text-red-500 mt-2"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6 }}
+              >
+                {errorMessage}
+              </motion.p>
             )}
           </form>
         </motion.div>

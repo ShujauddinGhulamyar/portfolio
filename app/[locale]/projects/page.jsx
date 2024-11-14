@@ -1,4 +1,5 @@
 "use client";
+
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
@@ -40,27 +41,57 @@ const Projects = () => {
 
   return (
     <motion.section
+      id="projects"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ delay: 0.2, duration: 0.2, ease: "easeIn" }}
+      transition={{ delay: 0.2, duration: 0.6, ease: "easeInOut" }}
       className="h-full py-10"
     >
       <div className="container mx-auto h-full flex flex-col">
+        {/* Animation du titre */}
         <motion.div
           className="text-center mb-8"
-          initial={{ x: -10, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.2 }}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 50 }} // Animation de sortie
+          transition={{ delay: 0.3, duration: 0.6, ease: "easeInOut" }}
         >
           <h1 className="text-4xl font-bold text-accent mb-4">{t("title")}</h1>
         </motion.div>
 
-        <div
+        {/* Animation du projet */}
+        <motion.div
           key={projects[currentProjectIndex].name}
           className="relative flex flex-col lg:flex-row items-center justify-between border-white/10 p-8 rounded-xl w-full"
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: { type: "spring", stiffness: 80, damping: 20 },
+          }}
+          exit={{
+            opacity: 0,
+            y: 100,
+            transition: { duration: 0.3, ease: "easeInOut" },
+          }}
+          viewport={{ once: false, amount: 0.3 }} // Se réactive à chaque fois que la section est visible
         >
-          {/* Image on the left */}
-          <div className="relative w-full lg:w-1/2 h-[200px] lg:h-[300px] mb-6 lg:mb-0 overflow-hidden rounded-lg">
+          {/* Image du projet avec animation */}
+          <motion.div
+            className="relative w-full lg:w-1/2 h-[200px] lg:h-[300px] mb-6 lg:mb-0 overflow-hidden rounded-lg"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: { type: "spring", stiffness: 100, damping: 25 },
+            }}
+            exit={{
+              opacity: 0,
+              x: -50,
+              transition: { duration: 0.3, ease: "easeInOut" },
+            }}
+            viewport={{ once: false, amount: 0.3 }}
+          >
             <Image
               src={projects[currentProjectIndex].images[currentImageIndex]}
               alt={`Image of ${projects[currentProjectIndex].name}`}
@@ -68,7 +99,7 @@ const Projects = () => {
               height={400}
               className="object-cover w-full h-full"
             />
-            {/* Navigation arrows with absolute positioning */}
+            {/* Navigation pour les images */}
             <button
               onClick={prevImage}
               className="absolute top-1/2 left-0 transform -translate-y-1/2 p-4 text-gray-700 hover:text-accent transition-all duration-150 hover:scale-125 hover:shadow-lg"
@@ -81,10 +112,24 @@ const Projects = () => {
             >
               <FiChevronRight size={32} />
             </button>
-          </div>
+          </motion.div>
 
-          {/* Description on the right */}
-          <div className="w-full lg:w-1/2 lg:pl-8">
+          {/* Description du projet avec animation */}
+          <motion.div
+            className="w-full lg:w-1/2 lg:pl-8"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              transition: { type: "spring", stiffness: 100, damping: 25 },
+            }}
+            exit={{
+              opacity: 0,
+              x: 50,
+              transition: { duration: 0.3, ease: "easeInOut" },
+            }}
+            viewport={{ once: false, amount: 0.3 }}
+          >
             <h3 className="text-xl font-semibold mb-2">
               {projects[currentProjectIndex].name}
             </h3>
@@ -92,7 +137,7 @@ const Projects = () => {
               {projects[currentProjectIndex].description}
             </p>
 
-            {/* Links to view the code and demo with icons */}
+            {/* Liens pour GitHub et démo */}
             <div className="flex flex-wrap gap-6 mt-4 justify-center lg:justify-start">
               <a
                 href={projects[currentProjectIndex].github}
@@ -113,8 +158,8 @@ const Projects = () => {
                 {t("Demo")}
               </a>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </motion.section>
   );
