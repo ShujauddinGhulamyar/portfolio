@@ -1,4 +1,5 @@
 "use client";
+
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -47,10 +48,10 @@ const Contact = () => {
 
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false); // État pour gérer la soumission
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const onSubmit = async (data) => {
-    setIsSubmitting(true); // Démarre la soumission
+    setIsSubmitting(true);
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -75,7 +76,7 @@ const Contact = () => {
       setErrorMessage(t("unexpected_error"));
       setSubmitSuccess(false);
     } finally {
-      setIsSubmitting(false); // Arrête la soumission
+      setIsSubmitting(false);
     }
   };
 
@@ -84,32 +85,31 @@ const Contact = () => {
       id="contact"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: false, amount: 0.3 }} // L'animation se déclenche chaque fois que la section devient visible
-      transition={{ duration: 0.8, ease: "easeInOut" }}
+      viewport={{ once: false, amount: 0.3 }}
+      transition={{ duration: 0.6, ease: "easeInOut" }}
       className="h-full py-10"
     >
       <div className="container mx-auto h-full flex flex-col">
-        {/* Animation du titre */}
         <motion.div
           className="text-center mb-8"
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{
-            delay: 0.2,
-            duration: 0.6,
+            delay: 0.1,
+            duration: 0.4,
             type: "spring",
-            stiffness: 50,
+            stiffness: 100,
+            damping: 25,
           }}
-          viewport={{ once: false, amount: 0.3 }} // Relance l'animation chaque fois que l'élément devient visible
         >
-          <h3 className="text-4xl font-semibold text-accent mb-4">
-            {t("title")}
-          </h3>
+          <h3 className="text-4xl font-semibold text-accent">{t("title")}</h3>
+          <p className="mt-4 text-lg max-w-3xl mx-auto text-center px-4">
+            {t("description")}
+          </p>
         </motion.div>
 
-        {/* Formulaire avec animation de bascule et de bounce */}
         <motion.div
-          className="flex flex-col xl:flex-row gap-6"
+          className="flex flex-col xl:flex-row justify-center items-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{
@@ -119,15 +119,14 @@ const Contact = () => {
             type: "spring",
             bounce: 0.3,
           }}
-          viewport={{ once: false, amount: 0.3 }} // Relance l'animation chaque fois que l'élément devient visible
+          viewport={{ once: false, amount: 0.3 }}
         >
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-col gap-6 p-8 bg-transparent rounded-xl flex-1 border-white/10"
+            className="flex flex-col gap-6 p-8 bg-transparent rounded-xl flex-1 border-white/10 max-w-[750px]"
           >
-            {/* Champs "Nom" et "Email" sur la même ligne */}
             <motion.div
-              className="grid grid-cols-1 xl:grid-cols-2 gap-6"
+              className="grid grid-cols-1 xl:grid-cols-2 gap-4"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{
@@ -139,7 +138,6 @@ const Contact = () => {
               }}
               viewport={{ once: false, amount: 0.3 }}
             >
-              {/* Champ "Nom" */}
               <div className="flex flex-col">
                 <label htmlFor="name" className="sr-only">
                   {t("name")}
@@ -149,6 +147,7 @@ const Contact = () => {
                   type="text"
                   placeholder={t("name")}
                   maxLength={50}
+                  className="h-12 text-lg"
                   {...register("name")}
                 />
                 {errors.name && (
@@ -158,7 +157,6 @@ const Contact = () => {
                 )}
               </div>
 
-              {/* Champ "Email" */}
               <div className="flex flex-col">
                 <label htmlFor="email" className="sr-only">
                   {t("email")}
@@ -168,6 +166,7 @@ const Contact = () => {
                   type="email"
                   placeholder={t("email")}
                   maxLength={254}
+                  className="h-12 text-lg"
                   {...register("email")}
                 />
                 {errors.email && (
@@ -178,7 +177,6 @@ const Contact = () => {
               </div>
             </motion.div>
 
-            {/* Champ "Message" */}
             <motion.div
               className="flex flex-col"
               initial={{ opacity: 0, y: 50 }}
@@ -197,7 +195,7 @@ const Contact = () => {
               </label>
               <Textarea
                 id="message"
-                className="h-[300px]"
+                className="h-48 text-lg"
                 placeholder={t("message")}
                 maxLength={500}
                 {...register("message")}
@@ -209,7 +207,6 @@ const Contact = () => {
               )}
             </motion.div>
 
-            {/* Bouton de soumission avec animation de survol */}
             <motion.div className="flex justify-center mt-6">
               <motion.div
                 whileHover={{ scale: 1.1 }}
@@ -218,8 +215,8 @@ const Contact = () => {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="flex items-center justify-center py-3 gap-2"
-                  disabled={isSubmitting} // Désactiver le bouton si en soumission
+                  className="flex items-center justify-center gap-2"
+                  disabled={isSubmitting}
                 >
                   <FaPaperPlane className="text-xl" />
                   <span>{isSubmitting ? t("sending") : t("send_message")}</span>
@@ -227,7 +224,6 @@ const Contact = () => {
               </motion.div>
             </motion.div>
 
-            {/* Messages de succès ou d'erreur */}
             {submitSuccess && (
               <motion.p
                 className="text-green-500 mt-2"

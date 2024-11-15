@@ -14,11 +14,11 @@ const Home = () => {
       id="home"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: false, amount: 0.3 }} // Déclenche l'animation chaque fois que la section entre dans la vue
-      transition={{ delay: 0.2, duration: 0.4, ease: "easeIn" }}
-      className="h-full"
+      viewport={{ once: false, amount: 0.3 }}
+      transition={{ duration: 0.6, ease: "easeInOut" }}
+      className="h-full py-10"
     >
-      <div className="container mx-auto h-full">
+      <div className="container mx-auto h-full flex justify-center items-center">
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pb-50">
           <div className="text-center xl:text-left xl:ml-40 mt-10">
             {/* Titre principal animé */}

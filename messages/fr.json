@@ -14,6 +14,7 @@
   },
   "Skills": {
     "title": "Compétences",
+    "description": "Découvrez les technologies que j’utilise pour créer mes projets ! 💻 Que ce soit pour le frontend ou le backend, voici les outils qui m'accompagnent dans mes créations.",
     "frontEnd": {
       "title": "Front-End",
       "description": "En tant que développeur front-end, je me spécialise dans la création d'interfaces utilisateur visuellement attrayantes et réactives. Ma maîtrise de HTML, CSS et JavaScript me permet de développer des applications web dynamiques. J'utilise des frameworks comme React et Angular pour améliorer l'interaction utilisateur et simplifier la navigation. De plus, j'utilise Bootstrap pour un style rapide et efficace, et Tailwind CSS pour des ajustements rapides de design sans compromettre la qualité."
@@ -26,30 +27,19 @@
   "Projects": {
     "title": "Projets",
     "title_project": "Projet",
-    "description": "Cette page est dédiée à la présentation de mes futurs projets personnels. Restez à l'affût pour des mises à jour passionnantes alors que je me lance dans de nouveaux défis et partage mes progrès!",
+    "description": "Bienvenue dans le futur de mes projets ! 🎉 C'est ici que je partagerai mes prochaines créations et aventures tech. Restez connectés ! 🚀",
     "Source_code": "Voir la code source",
     "Demo": "Voir la démo"
   },
   "Contact": {
     "title": "Contactez-moi",
-    "description": "Je suis ravi de vous entendre! Que vous ayez des questions, des retours ou que vous vouliez simplement discuter, n'hésitez pas à me contacter.",
+    "description": "Des questions, des idées ou simplement envie de discuter ? Je suis là pour vous ! 😊 N'hésitez pas à me contacter !",
     "name": "Nom",
     "email": "Email",
-    "message": "Message",
+    "message": "Bonjour...",
     "send_message": "Envoyer le message",
     "sending": "Envoi en cours ...",
-    "message_sent": "Message envoyé avec succès!",
-    "error_message": "Échec de l'envoi du message. Veuillez réessayer.",
-    "unexpected_error": "Une erreur inattendue s'est produite. Veuillez réessayer plus tard.",
-    "name_required": "Le nom est requis",
-    "name_max_length": "Le nom ne doit pas dépasser 50 caractères",
-    "name_invalid": "Le nom ne doit pas contenir de chiffres ou de caractères spéciaux",
-    "email_required": "L'e-mail est requis",
-    "email_invalid": "E-mail invalide",
-    "email_max_length": "L'e-mail ne doit pas dépasser 254 caractères",
-    "email_invalid_format": "L'e-mail doit être dans un format valide",
-    "message_required": "Le message est requis",
-    "message_max_length": "Le message ne doit pas dépasser 500 caractères"
+    "message_sent": "Message envoyé avec succès!"
   },
   "Nav": {
     "home": "Accueil",

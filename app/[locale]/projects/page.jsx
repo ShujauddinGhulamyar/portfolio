@@ -44,7 +44,7 @@ const Projects = () => {
       id="projects"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: false, amount: 0.3 }} // Animation déclenchée à chaque fois que la section devient visible
+      viewport={{ once: false, amount: 0.3 }} //
       transition={{ delay: 0.2, duration: 0.6, ease: "easeInOut" }}
       className="h-full py-10"
     >
@@ -52,12 +52,22 @@ const Projects = () => {
         {/* Animation du titre */}
         <motion.div
           className="text-center mb-8"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.6, ease: "easeInOut" }}
-          viewport={{ once: false, amount: 0.3 }}
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{
+            delay: 0.1,
+            duration: 0.4,
+            type: "spring",
+            stiffness: 100,
+            damping: 25,
+          }}
         >
           <h1 className="text-4xl font-bold text-accent mb-4">{t("title")}</h1>
+
+          {/* Paragraphe d'introduction */}
+          <p className="mt-4 text-lg max-w-3xl mx-auto text-center px-4">
+            {t("description")}
+          </p>
         </motion.div>
 
         {/* Animation du projet */}

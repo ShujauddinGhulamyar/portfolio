@@ -46,7 +46,7 @@ const Skills = () => {
       className="h-full py-10"
     >
       <div className="container mx-auto h-full flex flex-col">
-        {/* Animation de la section title avec effet de translation et de bounce */}
+        {/* Animation de la section title */}
         <motion.div
           className="text-center mb-8"
           initial={{ y: 50, opacity: 0 }}
@@ -60,10 +60,16 @@ const Skills = () => {
           }}
         >
           <h1 className="text-4xl font-bold text-accent mb-4">{t("title")}</h1>
+
+          {/* Paragraphe introductif court */}
+          <p className="mt-4 text-lg max-w-3xl mx-auto text-center px-4">
+            {t("description")}
+          </p>
         </motion.div>
 
+        {/* Skills Section */}
         <motion.div
-          className="mb-16"
+          className="flex flex-col md:flex-row justify-between gap-16"
           initial={{ opacity: 0 }}
           whileInView={{
             opacity: 1,
@@ -76,89 +82,80 @@ const Skills = () => {
             ease: "easeOut",
           }}
         >
-          <h2 className="text-3xl font-semibold text-center mb-8">
-            {t("frontEnd.title")}
-          </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 px-6">
-            {frontEndLogos.map((logo) => (
-              <motion.div
-                key={logo.alt}
-                className="flex flex-col items-center justify-center border border-white/10 p-4 rounded-lg shadow-lg hover:scale-110 transform transition-all duration-300 hover:shadow-xl"
-                initial={{ opacity: 0, y: 50, rotate: -45 }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                  rotate: 0,
-                  scale: 1.05,
-                }}
-                transition={{
-                  delay: 0.2,
-                  duration: 0.5,
-                  type: "spring",
-                  stiffness: 80,
-                  damping: 15,
-                }}
-              >
-                <Image
-                  src={logo.src}
-                  alt={logo.alt}
-                  width={48}
-                  height={48}
-                  className="mb-4"
-                />
-                <span className="text-sm text-white">{logo.name}</span>
-              </motion.div>
-            ))}
+          {/* Frontend Skills */}
+          <div className="w-full md:w-1/2">
+            <h2 className="text-3xl font-semibold text-center mb-8">
+              {t("frontEnd.title")}
+            </h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 justify-center items-center place-items-center">
+              {frontEndLogos.map((logo) => (
+                <motion.div
+                  key={logo.alt}
+                  className="flex flex-col items-center justify-center border border-white/10 p-4 rounded-lg shadow-lg hover:scale-110 transform transition-all duration-300 hover:shadow-xl w-36 h-36 flex-shrink-0"
+                  initial={{ opacity: 0, y: 50, rotate: -45 }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                    rotate: 0,
+                    scale: 1.05,
+                  }}
+                  transition={{
+                    delay: 0.2,
+                    duration: 0.5,
+                    type: "spring",
+                    stiffness: 80,
+                    damping: 15,
+                  }}
+                >
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={48}
+                    height={48}
+                    className="mb-4"
+                  />
+                  <span className="text-sm text-white">{logo.name}</span>
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </motion.div>
 
-        <motion.div
-          className="mb-16"
-          initial={{ opacity: 0 }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-            transition: { type: "spring", bounce: 0.3, stiffness: 80 },
-          }}
-          transition={{
-            delay: 0.2,
-            duration: 0.5,
-            ease: "easeOut",
-          }}
-        >
-          <h2 className="text-3xl font-semibold text-center mb-8">
-            {t("backEnd.title")}
-          </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 px-6">
-            {backEndLogos.map((logo) => (
-              <motion.div
-                key={logo.alt}
-                className="flex flex-col items-center justify-center border border-white/10 p-4 rounded-lg shadow-lg hover:scale-110 transform transition-all duration-300 hover:shadow-xl"
-                initial={{ opacity: 0, y: 50, rotate: 45 }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                  rotate: 0,
-                  scale: 1.05,
-                }}
-                transition={{
-                  delay: 0.2,
-                  duration: 0.5,
-                  type: "spring",
-                  stiffness: 80,
-                  damping: 15,
-                }}
-              >
-                <Image
-                  src={logo.src}
-                  alt={logo.alt}
-                  width={48}
-                  height={48}
-                  className="mb-4"
-                />
-                <span className="text-sm text-white">{logo.name}</span>
-              </motion.div>
-            ))}
+          {/* Backend Skills */}
+          <div className="w-full md:w-1/2">
+            <h2 className="text-3xl font-semibold text-center mb-8">
+              {t("backEnd.title")}
+            </h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 justify-center items-center place-items-center">
+              {backEndLogos.map((logo) => (
+                <motion.div
+                  key={logo.alt}
+                  className="flex flex-col items-center justify-center border border-white/10 p-4 rounded-lg shadow-lg hover:scale-110 transform transition-all duration-300 hover:shadow-xl w-36 h-36 flex-shrink-0"
+                  initial={{ opacity: 0, y: 50, rotate: -45 }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                    rotate: 0,
+                    scale: 1.05,
+                  }}
+                  transition={{
+                    delay: 0.2,
+                    duration: 0.5,
+                    type: "spring",
+                    stiffness: 80,
+                    damping: 15,
+                  }}
+                >
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={48}
+                    height={48}
+                    className="mb-4"
+                  />
+                  <span className="text-sm text-white">{logo.name}</span>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>

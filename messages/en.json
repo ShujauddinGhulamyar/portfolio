@@ -10,10 +10,11 @@
     "title": "About Me",
     "intro": "Hello! My name is Shuja, and I’m originally from Afghanistan. I’ve lived in Canada since the age of 7 and am currently based in the greater Montreal area.",
     "journey": "My journey into technology began at a young age, fueled by a curiosity about how things work—whether it’s websites, video games, or innovative tech solutions. This curiosity led me to pursue a program in Computer Science at Cégep Édouard-Montpetit, where I graduated in 2023. Since then, I have been deepening my skills in modern web development on platforms like Udemy.",
-    "passion": "I’m passionate about continuous learning and enjoy exploring new trends and skills. I love collaborating with others, as working with people brings fresh perspectives and enhances creativity. In my free time, I enjoy gaming, which not only entertains me but also sparks my imagination."
+    "passion": "I’m passionate about continuous learning and enjoy exploring new trends and skills. I love collaborating with others, as working with people brings fresh perspectives and enhances creativity. In my free time, I enjoy gaming , which not only entertains me but also sparks my imagination."
   },
   "Skills": {
     "title": "Skills",
+    "description": "Explore the technologies I use to build my projects! 💻 Whether it's for frontend or backend, here are the tools that help bring my creations to life.",
     "frontEnd": {
       "title": "Front-End",
       "description": "As a front-end developer, I specialize in crafting visually appealing and responsive user interfaces. My proficiency in HTML, CSS, and JavaScript enables me to develop dynamic web applications. I use frameworks like React and Angular to enhance user interaction and streamline navigation. Additionally, I use Bootstrap for quick and efficient styling, and Tailwind CSS for rapid design adjustments without sacrificing quality."
@@ -26,16 +27,16 @@
   "Projects": {
     "title": "Projects",
     "title_project": "Project",
-    "description": "This page is dedicated to showcasing my future personal projects. Stay tuned for exciting updates as I embark on new challenges and share my progress!",
+    "description": "Welcome to the future of my projects! 🎉 This is where I'll share my upcoming creations and tech adventures. Stay tuned! 🚀",
     "Source_code": "View the source code",
     "Demo": "View the demo"
   },
   "Contact": {
     "title": "Get in Touch",
-    "description": "I’m excited to hear from you! Whether you have questions, feedback, or just want to chat, feel free to reach out.",
+    "description": "Got questions, ideas, or just want to chat? I'm here for you! 😊 Feel free to reach out!",
     "name": "Name",
     "email": "Email",
-    "message": "Message",
+    "message": "Hi...",
     "send_message": "Send message",
     "sending": "Sending...",
     "message_sent": "Message sent successfully!",
