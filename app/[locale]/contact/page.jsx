@@ -123,7 +123,7 @@ const Contact = () => {
         >
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-col gap-6 p-8 bg-transparent rounded-xl flex-1 border-white/10 max-w-[750px]"
+            className="flex flex-col gap-6 p-8 bg-transparent rounded-xl flex-1 border-white/10 max-w-[800px]"
           >
             <motion.div
               className="grid grid-cols-1 xl:grid-cols-2 gap-4"
@@ -195,7 +195,7 @@ const Contact = () => {
               </label>
               <Textarea
                 id="message"
-                className="h-48 text-lg"
+                className="h-64 text-lg"
                 placeholder={t("message")}
                 maxLength={500}
                 {...register("message")}

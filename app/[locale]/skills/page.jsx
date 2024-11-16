@@ -1,5 +1,3 @@
-"use client";
-
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
@@ -87,7 +85,7 @@ const Skills = () => {
             <h2 className="text-3xl font-semibold text-center mb-8">
               {t("frontEnd.title")}
             </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 justify-center items-center place-items-center">
+            <div className="grid grid-cols-[repeat(auto-fill,minmax(150px,1fr))] gap-8 justify-center items-center place-items-center">
               {frontEndLogos.map((logo) => (
                 <motion.div
                   key={logo.alt}
@@ -125,7 +123,7 @@ const Skills = () => {
             <h2 className="text-3xl font-semibold text-center mb-8">
               {t("backEnd.title")}
             </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 justify-center items-center place-items-center">
+            <div className="grid grid-cols-[repeat(auto-fill,minmax(150px,1fr))] gap-8 justify-center items-center place-items-center">
               {backEndLogos.map((logo) => (
                 <motion.div
                   key={logo.alt}
