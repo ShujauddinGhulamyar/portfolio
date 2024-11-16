@@ -62,9 +62,9 @@ const Skills = () => {
           </p>
         </motion.div>
 
-        {/* Section avec Flexbox */}
+        {/* Section avec grid pour une disposition plus fluide */}
         <motion.div
-          className="flex flex-wrap justify-center gap-8 p-8 "
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 p-8"
           initial={{ opacity: 0 }}
           whileInView={{
             opacity: 1,
@@ -80,7 +80,7 @@ const Skills = () => {
           {allSkills.map((skill) => (
             <motion.div
               key={skill.alt}
-              className="flex flex-col items-center justify-center border border-white/10 p-4 rounded-lg shadow-lg hover:scale-110 transform transition-all duration-300 hover:shadow-xl w-36 h-36"
+              className="flex flex-col items-center justify-center border border-white/10 p-6 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300 hover:shadow-xl"
               initial={{ opacity: 0, y: 50, rotate: -45 }}
               whileInView={{
                 opacity: 1,
@@ -103,7 +103,9 @@ const Skills = () => {
                 height={48}
                 className="mb-4"
               />
-              <span className="text-sm text-white">{skill.name}</span>
+              <span className="text-sm text-white text-center">
+                {skill.name}
+              </span>
             </motion.div>
           ))}
         </motion.div>
