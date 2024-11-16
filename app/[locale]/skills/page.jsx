@@ -64,7 +64,7 @@ const Skills = () => {
 
         {/* Section avec Flexbox */}
         <motion.div
-          className="flex flex-wrap justify-center gap-8"
+          className="flex flex-wrap justify-center gap-8 p-8 "
           initial={{ opacity: 0 }}
           whileInView={{
             opacity: 1,

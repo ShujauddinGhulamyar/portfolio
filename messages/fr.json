@@ -27,13 +27,13 @@
   "Projects": {
     "title": "Projets",
     "title_project": "Projet",
-    "description": "Bienvenue dans le futur de mes projets ! 🎉 C'est ici que je partagerai mes prochaines créations et aventures tech. Restez connectés ! 🚀",
+    "description": "C'est ici que je partagerai mes prochaines créations. Restez connectés ! 🚀",
     "Source_code": "Voir la code source",
     "Demo": "Voir la démo"
   },
   "Contact": {
     "title": "Contactez-moi",
-    "description": "Des questions, des idées ou simplement envie de discuter ? Je suis là pour vous ! 😊 N'hésitez pas à me contacter !",
+    "description": "Des questions, des idées ou simplement envie de discuter ? N'hésitez pas à me contacter !😊",
     "name": "Nom",
     "email": "Email",
     "message": "Bonjour...",

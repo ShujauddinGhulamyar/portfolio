@@ -3,7 +3,7 @@
     "hello": "Hello! I'm",
     "name": "Shuja Ghulamyar",
     "title": "A Full Stack Developer in Montreal",
-    "intro": "Welcome to my portfolio! I'm glad you're here! While I'm currently working on my projects, this space will soon showcase my creative journey and future endeavors. Stay tuned for updates!",
+    "intro": "Welcome to my portfolio! I'm glad you're here! While I'm currently working on my projects, this space will soon showcase my creative journey and future projects. Stay tuned for updates!",
     "download_cv": "Download CV"
   },
   "About": {
@@ -27,13 +27,13 @@
   "Projects": {
     "title": "Projects",
     "title_project": "Project",
-    "description": "Welcome to the future of my projects! 🎉 This is where I'll share my upcoming creations and tech adventures. Stay tuned! 🚀",
+    "description": "This is where I'll share my upcoming creations and tech adventures. Stay tuned! 🚀",
     "Source_code": "View the source code",
     "Demo": "View the demo"
   },
   "Contact": {
     "title": "Get in Touch",
-    "description": "Got questions, ideas, or just want to chat? I'm here for you! 😊 Feel free to reach out!",
+    "description": "Got questions, ideas, or just want to chat? Feel free to reach out!😊",
     "name": "Name",
     "email": "Email",
     "message": "Hi...",
