@@ -5,6 +5,7 @@ import { FiDownload } from "react-icons/fi";
 import { motion } from "framer-motion";
 import Social from "@/components/Social";
 import { useTranslations } from "next-intl";
+import StarField from "@/components/StarField"; // Assure-toi d'importer le bon chemin
 
 const Home = () => {
   const t = useTranslations("Home");
@@ -16,9 +17,12 @@ const Home = () => {
       whileInView={{ opacity: 1 }}
       viewport={{ once: false, amount: 0.3 }}
       transition={{ duration: 0.6, ease: "easeInOut" }}
-      className="h-full py-10"
+      className="relative h-full py-10" // `relative` pour le conteneur principal
     >
-      <div className="container mx-auto h-full flex justify-center items-center">
+      {/* Composant StarField pour l'effet des étoiles en arrière-plan */}
+      <StarField />
+
+      <div className="container mx-auto h-full flex justify-center items-center relative z-10">
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pb-50">
           <div className="text-center xl:text-left xl:ml-40 mt-10">
             {/* Titre principal animé */}
