@@ -1,12 +1,29 @@
+/* styles/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  /* Définir un fond sombre de base pour toute la page */
   body {
     @apply font-primary bg-primary text-white leading-loose;
   }
+
+  /* Appliquer des styles aux titres */
   .h1 {
     @apply text-[48px] xl:text-[88px] leading-[1.1] font-semibold;
+  }
+
+  /* Ajuster l'HTML et le body pour que la page prenne toute la hauteur */
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+
+  /* Utiliser la couleur primaire pour le fond */
+  .bg-primary {
+    background-color: #0e4166; /* Cette couleur correspond à #0e4166 */
   }
 }
