@@ -7,13 +7,14 @@ const StarField = () => {
     height: 0,
   });
 
+  // Initialisation des dimensions de la fenêtre au montage
   useEffect(() => {
-    // Met à jour les dimensions du window une fois que le composant est monté
     setWindowDimensions({
       width: window.innerWidth,
       height: window.innerHeight,
     });
 
+    // Fonction de redimensionnement optimisée
     const handleResize = () => {
       setWindowDimensions({
         width: window.innerWidth,
@@ -21,44 +22,46 @@ const StarField = () => {
       });
     };
 
-    // Ajouter un écouteur pour les redimensionnements
+    // Ajouter un écouteur pour les changements de taille de la fenêtre
     window.addEventListener("resize", handleResize);
 
-    // Nettoyer l'écouteur lors du démontage du composant
+    // Nettoyage du listener lors du démontage
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []); // Cette useEffect s'exécute une seule fois après le montage du composant
+  }, []);
 
   useEffect(() => {
-    // S'assurer que l'animation se lance uniquement lorsque les dimensions sont disponibles
+    // S'assurer que l'animation ne démarre que lorsque les dimensions sont définies
     if (windowDimensions.width === 0 || windowDimensions.height === 0) return;
 
     const { width, height } = windowDimensions;
     const starField = starFieldRef.current;
 
-    const numberOfStars = 300;
+    const numberOfStars = width < 600 ? 150 : 300;
     const numberOfComets = 5;
 
+    // Créer les étoiles
     const stars = Array.from({ length: numberOfStars }).map(() => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      size: Math.random() * 1.5 + 0.5, // Taille des étoiles
-      speed: Math.random() * 0.2 + 0.05, // Vitesse des étoiles
-      opacity: Math.random() * 0.7 + 0.3, // Opacité des étoiles
+      size: Math.random() * 1.5 + 0.5,
+      speed: Math.random() * 0.2 + 0.05,
+      opacity: Math.random() * 0.7 + 0.3,
       direction: Math.random() < 0.5 ? 1 : -1,
       variation: Math.random() * 0.5 + 0.5,
     }));
 
+    // Créer les comètes
     const comets = Array.from({ length: numberOfComets }).map(() => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      size: Math.random() * 1.5 + 0.5, // Réduit la taille des comètes
+      size: Math.random() * 1.5 + 0.5,
       speed: Math.random() * 2 + 1,
       directionX: Math.random() * 2 - 1,
       directionY: Math.random() * 2 - 1,
       opacity: Math.random() * 0.5 + 0.5,
-      tailLength: Math.random() * 20 + 10, // Réduit la longueur de la queue
+      tailLength: Math.random() * 20 + 10,
     }));
 
     const animateStars = () => {
@@ -79,7 +82,7 @@ const StarField = () => {
         ctx.fillRect(star.x, star.y, starSize, starSize);
       });
 
-      // Dessiner les comètes (étoiles filantes)
+      // Dessiner les comètes
       comets.forEach((comet) => {
         comet.x += comet.speed * comet.directionX;
         comet.y += comet.speed * comet.directionY;
@@ -114,8 +117,9 @@ const StarField = () => {
       requestAnimationFrame(animateStars);
     };
 
+    // Démarrer l'animation
     animateStars();
-  }, [windowDimensions]); // Redémarre l'animation si les dimensions changent
+  }, [windowDimensions]);
 
   return (
     <canvas
@@ -128,6 +132,8 @@ const StarField = () => {
         left: 0,
         zIndex: -1,
         pointerEvents: "none",
+        maxWidth: "100%",
+        maxHeight: "100vh", // Assurer que le canvas ne dépasse pas l'écran
       }}
     ></canvas>
   );
