@@ -5,7 +5,7 @@ import { FiDownload } from "react-icons/fi";
 import { motion } from "framer-motion";
 import Social from "@/components/Social";
 import { useTranslations } from "next-intl";
-import AnimatedBackground from "@/components/AnimatedBackground"; // Importer le fond animé
+import AnimatedBackground from "@/components/AnimatedBackground"; // Import du fond animé
 
 const Home = () => {
   const t = useTranslations("Home");
@@ -17,9 +17,9 @@ const Home = () => {
       whileInView={{ opacity: 1 }}
       viewport={{ once: false, amount: 0.3 }}
       transition={{ duration: 0.6, ease: "easeInOut" }}
-      className="relative min-h-screen py-10 overflow-hidden" // Modifications principales ici
+      className="relative min-h-screen py-10 overflow-hidden" // Assurer la bonne hauteur et gérer le débordement
     >
-      {/* Fond animé */}
+      {/* Ajout du fond animé */}
       <AnimatedBackground />
 
       <div className="container mx-auto h-full flex justify-center items-center relative z-10">

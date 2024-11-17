@@ -1,6 +1,3 @@
-// components/AnimatedBackground.jsx
-import React from "react";
-
 const AnimatedBackground = () => (
   <svg
     version="1.1"
@@ -10,9 +7,9 @@ const AnimatedBackground = () => (
     y="0px"
     width="100%"
     height="100%"
-    viewBox="0 0 1600 900"
+    viewBox="0 0 1600 1000"
     preserveAspectRatio="xMidYMax slice"
-    className="absolute top-0 left-0 w-full h-full z-[-1]" // Garder le fond derrière le contenu
+    className="absolute top-0 left-0 w-full h-full z-[-1]"
   >
     <defs>
       <linearGradient id="bg">
@@ -23,10 +20,13 @@ const AnimatedBackground = () => (
       <path
         id="wave"
         fill="url(#bg)"
-        d="M-363.852,502.589c0,0,236.988-41.997,505.475,0 s371.981,38.998,575.971,0s293.985-39.278,505.474,5.859s493.475,48.368,716.963-4.995v560.106H-363.852V502.589z"
+        d="M-363.852,502.589c0,0,236.988-41.997,505.475,0
+        s371.981,38.998,575.971,0s293.985-39.278,505.474,5.859s493.475,48.368,716.963-4.995v560.106H-363.852V502.589z"
       />
     </defs>
+
     <g>
+      {/* Première vague avec un translate plus important pour augmenter sa hauteur */}
       <use xlinkHref="#wave" opacity=".3">
         <animateTransform
           attributeName="transform"
@@ -40,6 +40,8 @@ const AnimatedBackground = () => (
           repeatCount="indefinite"
         />
       </use>
+
+      {/* Deuxième vague, également avec un ajustement du translate */}
       <use xlinkHref="#wave" opacity=".6">
         <animateTransform
           attributeName="transform"
@@ -53,6 +55,8 @@ const AnimatedBackground = () => (
           repeatCount="indefinite"
         />
       </use>
+
+      {/* Troisième vague */}
       <use xlinkHref="#wave" opacity=".9">
         <animateTransform
           attributeName="transform"
